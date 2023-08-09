@@ -1,119 +1,103 @@
 /* general text */
-html {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  background-color: #282828;
-  color: #ebdbb2;
+ html {
+     -webkit-text-size-adjust: 100%;
+     -ms-text-size-adjust: 100%;
+     background-color: #282828;
+     color: #ebdbb2;
 }
-
-body {
-  background-color: #3c3836;
-  background-image: url(https://izder456.neocities.org/img/BRICK.PNG);
-  margin: 50px auto;
-  max-width: 23cm;
-  outline: 4pt solid #a89984;
-  padding: 14px;
-  padding-bottom: 14px;
-  padding-left: 14px;
-  padding-right: 14px;
-  font-family: Georgia, serif;
+ body {
+     background-color: #3c3836;
+     background-image: url(https://izder456.neocities.org/img/BRICK.PNG);
+     margin: 50px auto;
+     max-width: 23cm;
+     outline: 4pt solid #a89984;
+     padding: 14px;
+     padding-bottom: 14px;
+     padding-left: 14px;
+     padding-right: 14px;
+     font-family: Georgia, serif;
 }
-
-p {
-  font-size: 110%;
-  line-height: 125%;
-  padding: 10px;
-  padding-bottom: 10px;
-  background-color: #32302f;
-  outline: 4px solid #f2e5bc;
+ p {
+     font-size: 110%;
+     line-height: 125%;
+     padding: 10px;
+     padding-bottom: 10px;
+     background-color: #32302f;
+     outline: 4px solid #f2e5bc;
 }
-
 /* headers */
-h1 {
-  color: #cc241d;
-  font-size: 2.8em;
+ h1 {
+     color: #cc241d;
+     font-size: 2.8em;
 }
-
-h3 {
-  color: #d79921;
-  font-size: 1.8em;
+ h3 {
+     color: #d79921;
+     font-size: 1.8em;
 }
-
-h4 {
-  color: #b16286;
-  font-size: 1.4em;
+ h4 {
+     color: #b16286;
+     font-size: 1.4em;
 }
-
-h1,h3,h4 {
-  background-color: #282828;
-  outline: 2px solid #ebdbb2;
-  padding: 8px;
-  padding-bottom: 8px;
+ h1,h3,h4 {
+     background-color: #282828;
+     outline: 2px solid #ebdbb2;
+     padding: 8px;
+     padding-bottom: 8px;
 }
-
 /* Hyperlinks */
-a {
-  color: #458588;
+ a {
+     color: #458588;
 }
-a:hover {
-  color: #98971a;
-  outline: 0;
+ a:hover {
+     color: #98971a;
+     outline: 0;
 }
-a:focus {
-  outline: thin dotted;
+ a:focus {
+     outline: thin dotted;
 }
-
-p a {
-  color: #b16286;
-  text-decoration: none;
+ p a {
+     color: #b16286;
+     text-decoration: none;
 }
-
-p a:hover {
-  text-decoration: underline;
+ p a:hover {
+     text-decoration: underline;
 }
-
 /* Code blocks and preformatted text */
-
-code {
-  font-size: 90%;
-  line-height: 125%;
-  text-align: center;
-  background-color: #32302f;
+ code {
+     font-size: 90%;
+     line-height: 125%;
+     text-align: center;
+     background-color: #32302f;
 }
-
-pre {
-  background-color: #3c3836;
-  color: #ebdbb2;
-  border: 1pt solid #a89984;
-  padding: 1em;
-  box-shadow: 5pt 5pt 8pt #504945;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+ pre {
+     background-color: #3c3836;
+     color: #ebdbb2;
+     border: 1pt solid #a89984;
+     padding: 1em;
+     box-shadow: 5pt 5pt 8pt #504945;
+     white-space: pre-wrap;
+     word-wrap: break-word;
 }
-
-pre code {
-  background-color: #3c3836;
+ pre code {
+     background-color: #3c3836;
 }
-
 /* Unordered Lists */
-ul {
-  font-size: 110%;
-  line-height: 125%;
-  padding: 25px;
-  padding-bottom: 25px;
-  padding-right: 25px;
-  padding-left: 25px;
-  background-color: #32302f;
-  outline: 2px solid #f2e5bc;
+ ul {
+     font-size: 110%;
+     line-height: 125%;
+     padding: 25px;
+     padding-bottom: 25px;
+     padding-right: 25px;
+     padding-left: 25px;
+     background-color: #32302f;
+     outline: 2px solid #f2e5bc;
 }
-
 /* Miscellaneous */
-
-strong {
-  font-weight: 700;
+ strong {
+     font-weight: 700;
 }
-
-img {
-  outline: 4px solid #ebdbb2;
-  margin: 12px;
+ img {
+     outline: 4px solid #ebdbb2;
+     margin: 12px;
 }
+ 
