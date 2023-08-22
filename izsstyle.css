@@ -28,15 +28,27 @@
 /* headers */
  h1 {
      color: #cc241d;
-     font-size: 2.8em;
+     font-size: 3.5em;
+     text-shadow: 1px 1px 2px 
+            #d65d0e, 
+            1px 2px 2px
+            #928374;
 }
  h3 {
      color: #d79921;
-     font-size: 1.8em;
+     font-size: 2em;
+     text-shadow: 1px 1px 2px 
+            #d65d0e, 
+            1px 3px 2px
+            #928374;
 }
  h4 {
      color: #b16286;
-     font-size: 1.4em;
+     font-size: 1.65em;
+     text-shadow: 0px 0px 1px 
+            #d65d0e, 
+            0px 1px 1px
+            #928374;
 }
  h1,h3,h4 {
      background-color: #282828;
@@ -47,10 +59,17 @@
 /* Hyperlinks */
  a {
      color: #458588;
+        text-shadow: 0px 0px 1px 
+            #d79921, 
+            0px 1px 1px
+            #f83a598;
 }
  a:hover {
      color: #98971a;
-     outline: 0;
+        text-shadow: 0px 0px 1px 
+            #689d6a, 
+            0px 1px 1px
+            #79740e;
 }
  a:focus {
      outline: thin dotted;
