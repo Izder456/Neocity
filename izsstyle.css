@@ -9,7 +9,7 @@
      background-color: #3c3836;
      background-image: url(https://izder456.neocities.org/img/BRICK.PNG);
      margin: 50px auto;
-     max-width: 23cm;
+     max-width: 648px;
      outline: 4pt solid #a89984;
      padding: 14px;
      padding-bottom: 14px;
@@ -28,7 +28,7 @@
 /* headers */
  h1 {
      color: #cc241d;
-     font-size: 3.5em;
+     font-size: 2.75em;
      text-shadow: 1px 1px 2px 
             #d65d0e, 
             1px 2px 2px
@@ -100,10 +100,10 @@
  pre code {
      background-color: #3c3836;
 }
-/* Unordered Lists */
+w/* Unordered Lists */
  ul {
-     font-size: 110%;
-     line-height: 125%;
+     font-size: 105%;
+     line-height: 105%;
      padding: 25px;
      padding-bottom: 25px;
      padding-right: 25px;
