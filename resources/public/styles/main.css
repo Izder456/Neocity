@@ -1,0 +1,100 @@
+/* Reset some default styles and set background color and text color for the entire page */
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	background-color: #282828;
+	color: #ebdbb2;
+}
+
+/* Style for the body element */
+body {
+	background-color: #3c3836;
+	background-image: url(https://izder456.neocities.org/img/BRICK.PNG);
+	margin: 50px auto;
+	max-width: 648px;
+	outline: 4pt solid #a89984;
+	padding: 14px;
+	font-family: Georgia, serif;
+}
+
+/* Style for paragraphs */
+p {
+	font-size: 110%;
+	line-height: 125%;
+	padding: 10px;
+	background-color: #32302f;
+	outline: 4px solid #f2e5bc;
+}
+
+/* Styles for headers (h1, h3, h4) */
+h1, h3, h4 {
+	background-color: #282828;
+	outline: 2px solid #ebdbb2;
+	padding: 8px;
+}
+
+/* Style for h1 */
+h1 {
+	color: #cc241d;
+	font-size: 2.75em;
+	text-shadow: 1px 1px 2px #d65d0e, 1px 2px 2px #928374;
+}
+
+/* Style for h3 */
+h3 {
+	color: #d79921;
+	font-size: 2em;
+	text-shadow: 1px 1px 2px #d65d0e, 1px 3px 2px #928374;
+}
+
+/* Style for h4 */
+h4 {
+	color: #b16286;
+	font-size: 1.65em;
+	text-shadow: 0px 0px 1px #d65d0e, 0px 1px 1px #928374;
+}
+
+/* Styles for hyperlinks (a) */
+a {
+	color: #458588;
+	text-shadow: 0px 0px 1px #d79921, 0px 1px 1px #f83a598;
+}
+
+/* Hover style for hyperlinks */
+a:hover {
+	color: #98971a;
+	text-shadow: 0px 0px 1px #689d6a, 0px 1px 1px #79740e;
+}
+
+/* Style for links within paragraphs */
+p a {
+	color: #b16286;
+	text-decoration: underline;
+}
+
+/* Hover style for links within paragraphs */
+p a:hover {
+	text-decoration: underline;
+}
+
+/* Style for code within paragraphs */
+p code{
+	font-size: 125%;
+	line-height: 125%;
+	padding: 5px;
+}
+
+/* Style for unordered lists (ul) */
+ul {
+	font-size: 105%;
+	line-height: 105%;
+	padding: 25px;
+	background-color: #32302f;
+	outline: 2px solid #f2e5bc;
+}
+
+/* Style for images */
+img {
+	outline: 4px solid #ebdbb2;
+	margin: 12px;
+}
