@@ -1,0 +1,4 @@
+{:body
+ {:header [:header [:title]]
+  :summary [:section#summary-container [:summary]]
+  :content [:section#content-container [:content]]}}

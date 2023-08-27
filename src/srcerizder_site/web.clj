@@ -49,7 +49,7 @@
       [:div.body
         [:center
          [:img {:src "./img/HAPPYGRUV.GIF"}]
-         [:h3 "GOOBYE!!!!1!!1"] 
+         [:h3 "GOOBYE!!!!1!!1"]
          [:img {:src "./img/GOOBYEGRUV.GIF"}]]]]))
 
 ;; Parse partial page html docs
