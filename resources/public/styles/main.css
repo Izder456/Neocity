@@ -9,7 +9,7 @@ html {
 /* Style for the body element */
 body {
 	background-color: #3c3836;
-	background-image: url(https://izder456.neocities.org/img/BRICK.PNG);
+	background-image: url(../img/BRICK.PNG);
 	margin: 50px auto;
 	max-width: 648px;
 	outline: 4pt solid #a89984;

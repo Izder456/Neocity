@@ -8,4 +8,4 @@
 
 # DISCLAIMER
 
-- This project is licensed under a [Modified WTFPL](LICENSE.txt) License.
+- This project is licensed under a [Modified WTFPL](LICENSE) License.

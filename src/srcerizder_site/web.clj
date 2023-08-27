@@ -28,14 +28,29 @@
 ;; Define the basic structure of a page
 (defn layout-page [request page]
   (html5
-   [:head
-    [:meta {:charset "utf-8"}]
-    [:meta {:name "viewport"
-            :content "width=device-width, initial-scale=1.0"}]
-    [:title "Srcerizder!"]
-    [:link {:rel "stylesheet" :href (link/file-path request "/styles/main.css")}]]
-   [:body
-    [:div.body page]]))
+    [:head
+      [:meta {:charset "utf-8"}]
+        [:meta
+         {:content "width=device-width, initial-scale=1.0", :name "viewport"}]
+          [:title "Srcerizder!"]
+          [:link {:href "/styles/main.css", :rel "stylesheet"}]]
+    [:body
+      (comment "the meat n' potate")
+      [:div.body page]
+      (comment "hyperlink box")
+      [:div.body
+       {:class "mesg-container"}
+       [:p
+        [:b [:a {:href "#top"} "Back to" [:code "$(head -n1)"] "?"]]
+        [:br]
+        [:b [:a {:href "./index.html"} "Back to" [:code "$HOME"] "?"]]
+        [:br]]]
+      (comment "closer box")
+      [:div.body
+        [:center
+         [:img {:src "./img/HAPPYGRUV.GIF"}]
+         [:h3 "GOOBYE!!!!1!!1"] 
+         [:img {:src "./img/GOOBYEGRUV.GIF"}]]]]))
 
 ;; Parse partial page html docs
 (defn partial-pages [pages]
