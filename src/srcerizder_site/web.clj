@@ -10,7 +10,8 @@
             [clojure.java.io :as io]
             [clojure.string :as str]
             [hiccup.page :refer [html5]]
-            [stasis.core :as stasis]))
+            [stasis.core :as stasis]
+            [net.cgrand.enlive-html :as enlive]))
 
 ;;;;;;;;;;;;;;;;
 ;; Asset Pull ;;

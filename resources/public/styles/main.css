@@ -11,17 +11,17 @@ body {
 	background-color: #3c3836;
 	background-image: url(../img/BRICK.PNG);
 	margin: 50px auto;
-	max-width: 648px;
-	outline: 4pt solid #a89984;
-	padding: 14px;
+	max-width: 512px;
+	outline: 4px solid #a89984;
+	padding: 14px 14px;
 	font-family: Georgia, serif;
 }
 
 /* Style for paragraphs */
 p {
-	font-size: 110%;
+	font-size: 100%;
 	line-height: 125%;
-	padding: 10px;
+	padding: 10px 10px;
 	background-color: #32302f;
 	outline: 4px solid #f2e5bc;
 }
@@ -29,8 +29,8 @@ p {
 /* Styles for headers (h1, h3, h4) */
 h1, h3, h4 {
 	background-color: #282828;
-	outline: 2px solid #ebdbb2;
-	padding: 8px;
+	outline: 4px solid #ebdbb2;
+	padding: 12px 12px ;
 }
 
 /* Style for h1 */
@@ -79,22 +79,20 @@ p a:hover {
 
 /* Style for code within paragraphs */
 p code{
-	font-size: 125%;
+	font-size: 100%;
 	line-height: 125%;
-	padding: 5px;
 }
 
 /* Style for unordered lists (ul) */
 ul {
-	font-size: 105%;
-	line-height: 105%;
-	padding: 25px;
+	font-size: 100%;
+	line-height: 115%;
+	padding: 28px 28px;
 	background-color: #32302f;
-	outline: 2px solid #f2e5bc;
+	outline: 4px solid #f2e5bc;
 }
 
 /* Style for images */
 img {
 	outline: 4px solid #ebdbb2;
-	margin: 12px;
 }
