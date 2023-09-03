@@ -9,7 +9,8 @@ html {
 /* Style for the body element */
 body {
 	background-color: #3c3836;
-	background-image: url(../img/BRICK.PNG);
+	background-image: url(../img/BACKDRP.PNG);
+	background-size: contain;
 	margin: 50px auto;
 	max-width: 512px;
 	outline: 4px solid #a89984;

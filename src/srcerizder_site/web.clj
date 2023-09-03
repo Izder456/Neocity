@@ -49,9 +49,9 @@
       (comment "closer box")
       [:div.body
         [:center
-         [:img {:src "./img/HAPPYGRUV.GIF"}]
+         [:img {:src "./img/SRCERIZDER.PNG"}]
          [:h3 "GOOBYE!!!!1!!1"]
-         [:img {:src "./img/GOOBYEGRUV.GIF"}]]]]))
+         [:img {:src "./img/GOOBYEGRUV.PNG"}]]]]))
 
 ;; Parse partial page html docs
 (defn partial-pages [pages]
