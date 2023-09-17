@@ -9,8 +9,9 @@
             [optimus.strategies :refer [serve-live-assets]]
             [clojure.java.io :as io]
             [clojure.string :as str]
-            [hiccup.page :refer [html5]]
+            [hiccup.core :refer [html]]
             [stasis.core :as stasis]
+            [srcerizder-site.page :refer :all]
             [net.cgrand.enlive-html :as enlive]))
 
 ;;;;;;;;;;;;;;;;
@@ -26,43 +27,15 @@
 ;; Page Parse ;;
 ;;;;;;;;;;;;;;;;
 
-;; Define the basic structure of a page
-(defn layout-page [request page]
-  (html5
-    [:head
-      [:meta {:charset "utf-8"}]
-        [:meta
-         {:content "width=device-width, initial-scale=1.0", :name "viewport"}]
-          [:title "Srcerizder!"]
-          [:link {:href "/styles/main.css", :rel "stylesheet"}]]
-    [:body
-      (comment "the meat n' potate")
-      [:div.body page]
-      (comment "hyperlink box")
-      [:div.body
-       {:class "mesg-container"}
-       [:p
-        [:b [:a {:href "#top"} "Back to" [:code "$(head -n1)"] "?"]]
-        [:br]
-        [:b [:a {:href "./index.html"} "Back to" [:code "$HOME"] "?"]]
-        [:br]]]
-      (comment "closer box")
-      [:div.body
-        [:center
-         [:img {:src "./img/SRCERIZDER.PNG"}]
-         [:h3 "GOOBYE!!!!1!!1"]
-         [:img {:src "./img/GOOBYEGRUV.PNG"}]]]]))
+(defn hiccup-to-html [hiccup]
+  (apply str (map str hiccup)))
 
-;; Parse partial page html docs
-(defn partial-pages [pages]
-  (zipmap (keys pages)
-          (map #(fn [req] (layout-page req %)) (vals pages))))
+(def regular-html (hiccup-to-html (hiccup-html)))
 
-;; slurp up those pages bAYBE!
-(defn get-pages []
+(defn render-pages []
   (stasis/merge-page-sources
    {:public (stasis/slurp-directory "resources/public" #".*\.(html|css|js)$")
-    :partials (partial-pages (stasis/slurp-directory "resources/partials" #".*\.html$"))}))
+    :partials (:regular-html (regular-html))}))
 
 ;;;;;;;;;;;;;;;
 ;; ProdStuff ;;
