@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.10.3"]
                  [stasis "2023.06.03"]
                  [ring "1.10.0"]
+                 [garden "1.3.10"]
                  [hiccup "2.0.0-RC1"]
                  [optimus "2023-02-08"]]
   :ring {:handler srcerizder-site.web/app}

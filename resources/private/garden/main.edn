@@ -1,0 +1,54 @@
+([:html
+  {:-webkit-text-size-adjust "100%"}
+  {:-ms-text-size-adjust "100%"}
+  {:background-color "#282828"}
+  {:color "#EBDBB2"}]
+ [:body
+  {:background-color "#3C3836"}
+  {:background-size "contain"}
+  {:background-image "url(../img/BACKDRP.PNG)"}
+  {:margin "50px auto"}
+  {:max-width "512px"}
+  {:outline "4px solid #A89984"}
+  {:pading "14px 14px"}
+  {:font-family "serif"}]
+ [:p
+  {:font-size "100%"}
+  {:line-height "125%"}
+  {:margin "14px 14px"}
+  {:padding "10px 10px"}
+  {:background-color "#32302F"}
+  {:outline "4px solid #F2E5BC"}]
+ [:h1
+  :h3
+  :h4
+  {:background-color "#282828"}
+  {:outline "4px solid #EBDBB2"}
+  {:padding "12px 12px"}]
+ [:h1
+  {:color "#CC241D"}
+  {:font-size "2.75em"}
+  {:text-shadow "1px 1px 2px #D65D0E, 1px 2px 2px #928374"}]
+ [:h3
+  {:color "#D79921"}
+  {:font-size "2em"}
+  {:text-shadow "1px 1px 2px #D65D0E, 1px 3px 2px #92374"}]
+ [:h4
+  {:color "#B16286"}
+  {:font-size "1.64em"}
+  {:text-shadow "0px 0px 1px #D65D0E, 0px 1px 1px #928374"}]
+ [:a
+  {:color "#458588"}
+  {:text-shadow "0px 0px 1px #D65D0E, 0px 1px 1px #F8A598"}
+  {:text-generation "underline"}
+  [:&:hover
+   {:color "#98971A"}
+   {:text-shadow "0px 0px 1px #698D6A, 0px 1px 1px #79740E"}]]
+ [:code {:font-size "100%"} {:font-family "monospace"} [:line-height "125%"]]
+ [:ul
+  {:font-size "100%"}
+  {:line-height "125%"}
+  {:padding "28px 28px"}
+  {:background-color "#32302F"}
+  {:outline "4px solid #F2E5BC"}]
+ [:img {:outline "4px solid #EBDBB2"}])
