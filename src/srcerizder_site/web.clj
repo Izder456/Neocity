@@ -73,9 +73,6 @@
 ;; Ensure Dist is there
 (defn ensure-dist [path]
   (let [dir (io/file path)]
-    (when (.exists dir)
-      (.rmdirs dir)
-      (.mkdirs dir)
     (when-not (.exists dir)
       (.mkdirs dir)))))
 
