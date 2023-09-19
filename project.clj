@@ -7,7 +7,6 @@
                  [stasis "2023.06.03"]
                  [ring "1.10.0"]
                  [hiccup "2.0.0-RC1"]
-                 [enlive "1.1.6"]
                  [optimus "2023-02-08"]]
   :ring {:handler srcerizder-site.web/app}
   :aliases {"build-site" ["run" "-m" "srcerizder-site.web/export"]}
