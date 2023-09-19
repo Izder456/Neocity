@@ -9,25 +9,24 @@
             [clojure.string :as string]
             [clojure.edn :as edn]
             [clojure.java.io :as io]
+            [garden.core :as garden]
             [hiccup2.core :as hiccup2]
             [stasis.core :as stasis]))
 
-;;;;;;;;;;;;;;;;
-;; Asset Pull ;;
-;;;;;;;;;;;;;;;;
-
-;; Pull down assets for images and styles
-(defn get-assets []
-  (assets/load-assets "public" [#"/styles/.*" #"/img/.*\.(PNG|GIF|JPG|JPEG|BMP)"]))
 
 ;;;;;;;;;;;;;;;
-;; EDN  Docs ;;
+;; EDN  Data ;;
 ;;;;;;;;;;;;;;;
 
 ;; Public dir
 (def publics "resources/public/")
+(def public-styles "resources/public/styles/")
 
-;; Load in edn docs
+;; Private edn dirs
+(def edn-docs "resources/private/hiccup")
+(def edn-styles "resources/private/garden")
+
+;; Load in edn files
 (defn load-edn [filename]
   (edn/read-string (slurp filename)))
 
@@ -49,17 +48,55 @@
                    (.getName edn-file) ".edn")]
       (convert-to-html edn-file))))
 
-;; Private edn dir
-(def edn-docs "resources/private/edn")
+;; Convert 1 (one) edn doc to html via argument
+(defn convert-to-css [edn-stylename]
+  (let [base-filename (-> edn-stylename
+                          (.getName)
+                          (string/replace #"\.edn$" ""))
+        css-filename (str public-styles base-filename ".css")
+        garden-data (load-edn edn-stylename)
+        css (garden/css garden-data)]
+    (spit css-filename css)))
+
+;; Recurse over a seq of all (any) edn docs and run (convert-to-css) on them
+(defn convert-all-to-css [edn-directory]
+  (let [edn-styles (file-seq (io/file edn-directory))]
+    (doseq [edn-style edn-styles
+            :when (.endsWith
+                   (.getName edn-style) ".edn")]
+      (convert-to-css edn-style))))
+
+;;;;;;;;;;;;;;;;
+;; Ensure dir ;;
+;;;;;;;;;;;;;;;;
+
+;; Ensure Dir is there, otherwise make it!
+(defn ensure-dir [path]
+  (let [dir (io/file path)]
+    (when-not (.exists dir)
+      (.mkdirs dir))))
 
 ;;;;;;;;;;;;;;;;
 ;; Page Logic ;;
 ;;;;;;;;;;;;;;;;
 
-(defn get-pages []
+(defn final-render []
+  (ensure-dir publics)
+  (ensure-dir public-styles)
   (convert-all-to-html edn-docs)
+  (convert-all-to-css edn-styles))
+
+(defn get-pages []
   (stasis/merge-page-sources
-   {:public (stasis/slurp-directory "resources/public" #".*\.(html|css|js)$")}))
+   {:public (stasis/slurp-directory "resources/public" #".*\.(html|css)$")}))
+
+;;;;;;;;;;;;;;;;
+;; Asset Pull ;;
+;;;;;;;;;;;;;;;;
+
+;; Pull down assets for images and styles
+(defn get-assets []
+  (assets/load-assets "public" [#"/styles/.*" #"/img/.*\.(PNG|GIF|JPG|JPEG|BMP)"]))
 
 ;;;;;;;;;;;;;;;
 ;; ProdStuff ;;
@@ -70,17 +107,14 @@
              (optimus/wrap get-assets optimizations/all serve-live-assets)
              wrap-content-type))
 
-;; Ensure Dist is there
-(defn ensure-dist [path]
-  (let [dir (io/file path)]
-    (when-not (.exists dir)
-      (.mkdirs dir)))))
-
 ;; define export location
 (def export-dir "dist")
+(def export-style-dir "dist/styles")
 
 (defn export []
-  (ensure-dist export-dir)
+  (final-render)
+  (ensure-dir export-dir)
+  (ensure-dir export-style-dir)
   (let [assets (optimizations/all (get-assets) {})]
     (stasis/empty-directory! export-dir)
     (optimus.export/save-assets assets export-dir)
