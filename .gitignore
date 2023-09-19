@@ -5,6 +5,8 @@ pom.xml
 pom.xml.asc
 *.jar
 *.class
+/dist/*
+/resources/public/*.html
 /lib/
 /classes/
 /target/
