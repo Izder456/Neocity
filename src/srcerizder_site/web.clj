@@ -89,7 +89,7 @@
 ;; Get page data ready
 (defn get-pages []
   (stasis/merge-page-sources
-   {:public (stasis/slurp-directory "resources/public" #".*\.(html|css)$")}))
+   {:public (stasis/slurp-directory "resources/public" #".*\.(html|css|png|ico|webmanifest)$")}))
 
 ;;;;;;;;;;;;;;;;
 ;; Asset Pull ;;
