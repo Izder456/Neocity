@@ -142,7 +142,6 @@
     (stasis/export-pages (get-pages) export-dir {:optimus-assets assets})))
 
 ;; Serve for debugging with ring
-(def app (-> (export)
-             (stasis/serve-pages get-pages)
+(def app (-> (stasis/serve-pages get-pages)
              (optimus/wrap get-assets optimizations/all serve-live-assets)
              wrap-content-type))
