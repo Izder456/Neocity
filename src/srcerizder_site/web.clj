@@ -13,7 +13,6 @@
             [hiccup2.core :as hiccup2]
             [stasis.core :as stasis]))
 
-
 ;;;;;;;;;;;;;;;
 ;; EDN  Data ;;
 ;;;;;;;;;;;;;;;
@@ -80,12 +79,14 @@
 ;; Page Logic ;;
 ;;;;;;;;;;;;;;;;
 
+;; Render hiccup and garden edn maps
 (defn final-render []
   (ensure-dir publics)
   (ensure-dir public-styles)
   (convert-all-to-html edn-docs)
   (convert-all-to-css edn-styles))
 
+;; Get page data ready
 (defn get-pages []
   (stasis/merge-page-sources
    {:public (stasis/slurp-directory "resources/public" #".*\.(html|css)$")}))
@@ -94,7 +95,7 @@
 ;; Asset Pull ;;
 ;;;;;;;;;;;;;;;;
 
-;; Pull down assets for images and styles
+;; Pull assets for images and styles
 (defn get-assets []
   (assets/load-assets "public" [#"/styles/.*" #"/img/.*\.(PNG|GIF|JPG|JPEG|BMP)"]))
 
@@ -102,16 +103,36 @@
 ;; ProdStuff ;;
 ;;;;;;;;;;;;;;;
 
-;; serve!
-(def app (-> (stasis/serve-pages get-pages)
-             (optimus/wrap get-assets optimizations/all serve-live-assets)
-             wrap-content-type))
+;; Safe Delete
+(defn delete-safe [file-path]
+  (if (.exists (io/file file-path))
+    (try
+      (io/delete-file file-path)
+      (catch Exception e (str "Exception caught: " (.getMessage e))))
+    false))
 
-;; define export location
-(def export-dir "dist")
-(def export-style-dir "dist/styles")
+;; Recursive delete
+(defn delete-dir [dir-path]
+  (let [dir-contents (file-seq (io/file dir-path))
+        del-files (filter #(.isFile %) dir-contents)]
+    (doseq [file del-files]
+      (delete-safe (.getPath file)))
+    (delete-safe dir-path)))
 
+;; Define export location
+(def export-dir "./dist")
+(def export-style-dir "./dist/styles")
+
+;; Clean target
+(defn clean []
+  (delete-dir export-dir)
+  (delete-dir export-style-dir)
+  (delete-dir (str publics [#"\.html$"]))
+  (delete-dir public-styles))
+
+;; Export Target
 (defn export []
+  (clean)
   (final-render)
   (ensure-dir export-dir)
   (ensure-dir export-style-dir)
@@ -119,3 +140,9 @@
     (stasis/empty-directory! export-dir)
     (optimus.export/save-assets assets export-dir)
     (stasis/export-pages (get-pages) export-dir {:optimus-assets assets})))
+
+;; Serve for debugging with ring
+(def app (-> (export)
+             (stasis/serve-pages get-pages)
+             (optimus/wrap get-assets optimizations/all serve-live-assets)
+             wrap-content-type))

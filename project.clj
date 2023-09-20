@@ -1,4 +1,4 @@
-(defproject srcerizder-site "a1.0"
+(defproject srcerizder-site "b1.0"
   :description "My Neocity Page"
   :url "https://izder456.neocities.org"
   :license {:name "WTFPL Version 2 (Modified)"
@@ -10,5 +10,7 @@
                  [hiccup "2.0.0-RC1"]
                  [optimus "2023-02-08"]]
   :ring {:handler srcerizder-site.web/app}
-  :aliases {"build-site" ["run" "-m" "srcerizder-site.web/export"]}
+  :aliases {"build-site" ["run" "-m" "srcerizder-site.web/export"]
+            "clean-site" ["run" "-m" "srcerizder-site.web/clean"]
+            "run-site" ["ring", "server"]}
   :profiles {:dev {:plugins [[lein-ring "0.12.6"]]}})
