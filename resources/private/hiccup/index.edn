@@ -60,7 +60,7 @@
    [:h4 "Tech Stuffs"]
    [:ul
     [:li [:a {:rel "me", :href "https://github.com/izder456"} "Github"]]
-    [:li [:a {:rel "me", :href "https://unixhideout.solutions/gl"} "GeekLog I Co-Moderate"]]
+    [:li [:a {:rel "me", :href "https://unixhideout.solutions/geeklog"} "GeekLog I Co-Moderate"]]
     [:li [:a {:rel "me", :href "https://unixhideout.solutions"} "Group I Co-Moderate"]]]]]
  [:section
   {:id "mesg-container"}
