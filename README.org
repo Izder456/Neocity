@@ -105,7 +105,7 @@ Clojure is Java with a lisp, so we need to declare name space and relevant ~:req
 
 *** =EDN-DATA-HANDLE=
 
-Since my [[resources/private/hiccup/index.edn]["HTML"]] and [[resources/private/garden/main.edn]["CSS"]] are just EDN data, I need a way to load that into my export logic
+Since my [[resources/private/hiccup/index.edn]["HTML"]] and [[resources/private/garden/main.edn]["CSS"]] are just [[https://github.com/edn-format/edn][EDN-Format]], I need a way to load that into my export logic
 
 #+BEGIN_SRC clojure :tangle src/srcerizder_site/web.clj
 ;; Public dir
@@ -125,7 +125,7 @@ Since my [[resources/private/hiccup/index.edn]["HTML"]] and [[resources/private/
 
 - My [[resources/private/hiccup/index.edn]["HTML"]] is [[https://github.com/weavejester/hiccup][Hiccup data]]
 - My [[resources/private/garden/main.edn]["CSS"]] is [[https://github.com/noprompt/garden][Garden data]]
-  + /Both/ are stored in EDN-Format
+  + /Both/ are stored in [[https://github.com/edn-format/edn][EDN-Format]]
 
 #+BEGIN_SRC clojure :tangle src/srcerizder_site/web.clj
 ;; Convert 1 (one) edn doc to html via argument
