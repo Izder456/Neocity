@@ -1,30 +1,13 @@
-#+TITLE: Srcerizder's Neocity Page
-#+DESCRIPTION: My Neocity Page
-#+KEYWORDS: clojure, neocity, org-mode, izder
-#+LANGUAGE: en
-
+* Srcerizder's Neocity Page
 + Intended as an +autistic+ /artistic/ personal replacement for Linktr.ee
-
 + This can be thought of as a form of interweb portfolio.
-
 + It is intentionally dated looking, and minimal. I *will not* be modernizing this to look like =generic_template.css=
-
 + /I won't provide support for any issues on your machine, as this is a pet project./
-
------
-
-* DISCLAIMER
-
+** DISCLAIMER
 - I'm not responsible for any breakage due to my code.
-
-- If you're unsure, refer to [[LICENSE.txt][THE LICENSE]] to see how seriously I take this.
-
+- If you're unsure, refer to [[./LICENSE.txt][THE LICENSE]] to see how seriously I take this.
 - /Use with *caution*/
-
-  -----
-
-* Layout of Project
-
+** Layout of Project
 #+BEGIN_SRC
 .
 |-- LICENSE.txt
@@ -52,13 +35,9 @@
     `-- srcerizder_site
         `-- web.clj
 #+END_SRC
-
-* Code Structure
-
-** [[project.clj][=project.clj=]]
-
+** Code Structure
+*** [[project.clj][=project.clj=]]
 This is my Dependency Declaration, as well as project structure
-
 #+BEGIN_SRC clojure :tangle project.clj
 (defproject srcerizder-site "b1.0"
   :description "My Neocity Page"
@@ -70,22 +49,20 @@ This is my Dependency Declaration, as well as project structure
                  [ring "1.10.0"]
                  [garden "1.3.10"]
                  [hiccup "2.0.0-RC1"]
+                 [clj-org "0.0.3"]
                  [optimus "2023-02-08"]]
   :ring {:handler srcerizder-site.web/app}
   :aliases {"build-site" ["run" "-m" "srcerizder-site.web/export"]
             "clean-site" ["run" "-m" "srcerizder-site.web/clean"]
             "run-site" ["ring", "server"]}
+  :repl-options {:init-ns srcerizder-site.web
+                 :init (use 'srcerizder-site.web :reload)}
   :profiles {:dev {:plugins [[lein-ring "0.12.6"]]}})
 #+END_SRC
-
-** [[src/srcerizder_site/web.clj][=web.clj=]]
-
+*** [[src/srcerizder_site/web.clj][=web.clj=]]
 This has my export Logic, and Macros
-
-*** =NAMESPACE-DECLARE=
-
+**** =NAMESPACE-DECLARE=
 Clojure is Java with a lisp, so we need to declare name space and relevant ~:require~ values
-
 #+BEGIN_SRC clojure :tangle src/srcerizder_site/web.clj
 ;; Define Namespace & alias for easy use (bleh, boilerplate...)
 (ns srcerizder-site.web
@@ -100,13 +77,11 @@ Clojure is Java with a lisp, so we need to declare name space and relevant ~:req
             [clojure.java.io :as io]
             [garden.core :as garden]
             [hiccup2.core :as hiccup2]
+            [clj-org.org :as cljorg]
             [stasis.core :as stasis]))
 #+END_SRC
-
-*** =EDN-DATA-HANDLE=
-
+**** =EDN-DATA-HANDLE=
 Since my [[resources/private/hiccup/index.edn]["HTML"]] and [[resources/private/garden/main.edn]["CSS"]] are just [[https://github.com/edn-format/edn][EDN-Format]], I need a way to load that into my export logic
-
 #+BEGIN_SRC clojure :tangle src/srcerizder_site/web.clj
 ;; Public dir
 (def publics "resources/public/")
@@ -120,13 +95,27 @@ Since my [[resources/private/hiccup/index.edn]["HTML"]] and [[resources/private/
 (defn load-edn [filename]
   (edn/read-string (slurp filename)))
 #+END_SRC
+**** =ORG-DATA-HANDLE=
+TODO: fix the org-parsing using [[https://github.com/eigenhombre/clj-org][clj-org]]
+MY Org-mode [[README.org][README.org]] is useless if not flexed in html
+#+BEGIN_SRC clojure :tangle src/srcerizder_site/web.clj
+;; Define ORG Readme location
+(def org-docs "README.org")
 
-*** =CONVERSION-LOGIC=
-
+;; Convert 1 (one) org doc to edn via argument
+(defn convert-org-to-edn [org-filename]
+  (let [base-filename (-> org-filename
+                          ;;(.getName)
+                          (string/replace #"\.org$" ""))
+        edn-filename (str edn-docs "/" base-filename ".edn")
+        org-data (cljorg/parse-org (slurp org-filename))
+        edn (str "(" org-data ")")]
+    (spit edn-filename edn)))
+#+END_SRC
+**** =CONVERSION-LOGIC=
 - My [[resources/private/hiccup/index.edn]["HTML"]] is [[https://github.com/weavejester/hiccup][Hiccup data]]
 - My [[resources/private/garden/main.edn]["CSS"]] is [[https://github.com/noprompt/garden][Garden data]]
   + /Both/ are stored in [[https://github.com/edn-format/edn][EDN-Format]]
-
 #+BEGIN_SRC clojure :tangle src/srcerizder_site/web.clj
 ;; Convert 1 (one) edn doc to html via argument
 (defn convert-to-html [edn-filename]
@@ -140,6 +129,7 @@ Since my [[resources/private/hiccup/index.edn]["HTML"]] and [[resources/private/
 
 ;; Recurse over a seq of all (any) edn docs and run (convert-to-html) on them
 (defn convert-all-to-html [edn-directory]
+  (convert-org-to-edn org-docs)
   (let [edn-files (file-seq (io/file edn-directory))]
     (doseq [edn-file edn-files
             :when (.endsWith
@@ -164,12 +154,9 @@ Since my [[resources/private/hiccup/index.edn]["HTML"]] and [[resources/private/
                    (.getName edn-style) ".edn")]
       (convert-to-css edn-style))))
 #+END_SRC
-
-*** =ENSURE-DIR-EXIST=
-
+**** =ENSURE-DIR-EXIST=
 I need to ensure that the export dir exists, so if not, we need a way to make it.
 - This function does this
-
 #+BEGIN_SRC clojure :tangle src/srcerizder_site/web.clj
 ;; Ensure Dir is there, otherwise make it!
 (defn ensure-dir [path]
@@ -177,12 +164,9 @@ I need to ensure that the export dir exists, so if not, we need a way to make it
     (when-not (.exists dir)
       (.mkdirs dir))))
 #+END_SRC
-
-*** =HANDLE-EXPORTTIME-LOGIC=
-
+**** =HANDLE-EXPORTTIME-LOGIC=
 1. I need to =ensure= that the dirs exist where they need to be
 2. then, i need to pull the pages and slurp them into [[https://github.com/magnars/stasis][stasis]]
-
 #+BEGIN_SRC clojure :tangle src/srcerizder_site/web.clj
 ;; Render hiccup and garden edn maps
 (defn final-render []
@@ -200,11 +184,8 @@ I need to ensure that the export dir exists, so if not, we need a way to make it
 (defn get-assets []
   (assets/load-assets "public" [#"/styles/.*" #"/img/.*\.(PNG|GIF|JPG|JPEG|BMP)"]))
 #+END_SRC
-
-*** =DELETE-LOGIC=
-
+**** =DELETE-LOGIC=
 1. I need a way to safely +clean+ delete files, making sure i don't do a ~rm -rvf~ on something I probably forgot about
-
 #+BEGIN_SRC clojure :tangle src/srcerizder_site/web.clj
 ;; Safe Delete
 (defn delete-safe [file-path]
@@ -222,13 +203,10 @@ I need to ensure that the export dir exists, so if not, we need a way to make it
       (delete-safe (.getPath file)))
     (delete-safe dir-path)))
 #+END_SRC
-
-*** =FINAL-EXPORTTIME-LOGIC=
-
+**** =FINAL-EXPORTTIME-LOGIC=
 1. Define export locations
 2. Clean export locations
 3. *Finally* export my site
-
 #+BEGIN_SRC clojure :tangle src/srcerizder_site/web.clj
 ;; Define export location
 (def export-dir "./dist")
@@ -252,11 +230,8 @@ I need to ensure that the export dir exists, so if not, we need a way to make it
     (optimus.export/save-assets assets export-dir)
     (stasis/export-pages (get-pages) export-dir {:optimus-assets assets})))
 #+END_SRC
-
-*** =RING-WEBSERVER-APP=
-
+**** =RING-WEBSERVER-APP=
 - /for testing/
-
 #+BEGIN_SRC clojure :tangle src/srcerizder_site/web.clj
 ;; Serve for debugging with ring
 (def app (-> (stasis/serve-pages get-pages)
