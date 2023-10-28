@@ -1,4 +1,4 @@
-(prn (binding [*out* (java.io.StringWriter.)](ns srcerizder-site.web
+(ns srcerizder-site.web
   (:require [ring.middleware.content-type :refer [wrap-content-type]]
             [optimus.assets :as assets]
             [optimus.export]
@@ -11,47 +11,43 @@
             [garden.core :as garden]
             [hiccup2.core :as hiccup2]
             [clj-org.org :as cljorg]
-            [stasis.core :as stasis]))))
+            [stasis.core :as stasis]
+            [srcerizder-site.os :as os]))
 
-(prn (binding [*out* (java.io.StringWriter.)](def publics "resources/public/")
+(def publics "resources/public/")
 (def public-styles "resources/public/styles/")
-
-
 (def edn-docs "resources/private/hiccup")
 (def edn-styles "resources/private/garden")
+(def org-docs "README.org")
+(def export-dir "./dist")
+(def export-style-dir "./dist/styles")
 
 
 (defn load-edn [filename]
-  (edn/read-string (slurp filename)))))
-
-(prn (binding [*out* (java.io.StringWriter.)](def org-docs "README.org")
-
+  (edn/read-string (slurp filename)))
 
 (defn convert-org-to-edn [org-filename]
   (let [base-filename (-> org-filename
-
                           (string/replace #"\.org$" ""))
-        edn-filename (str edn-docs "/" base-filename ".edn")
+        edn-filename (os/path-append edn-docs (str base-filename ".edn"))
         org-data (cljorg/parse-org (slurp org-filename))
-        edn (str "(" org-data ")")]
-    (spit edn-filename edn)))))
+        edn (list (:content org-data))]
+    (spit edn-filename edn)))
 
-(prn (binding [*out* (java.io.StringWriter.)](defn convert-to-html [edn-filename]
+(defn convert-to-html [edn-filename]
   (let [base-filename (-> edn-filename
-                          (.getName)
+                          (os/basename)
                           (string/replace #"\.edn$" ""))
-        html-filename (str publics base-filename ".html")
+        html-filename (os/path-append publics (str base-filename ".html"))
         hiccup-data (load-edn edn-filename)
-        html (hiccup2/html hiccup-data)]
+        html (str (hiccup2/html hiccup-data))]
     (spit html-filename html)))
-
 
 (defn convert-all-to-html [edn-directory]
   (convert-org-to-edn org-docs)
   (let [edn-files (file-seq (io/file edn-directory))]
     (doseq [edn-file edn-files
-            :when (.endsWith
-                   (.getName edn-file) ".edn")]
+            :when (string/ends-with? edn-file ".edn")]
       (convert-to-html edn-file))))
 
 
@@ -70,29 +66,27 @@
     (doseq [edn-style edn-styles
             :when (.endsWith
                    (.getName edn-style) ".edn")]
-      (convert-to-css edn-style))))))
+      (convert-to-css edn-style))))
 
-(prn (binding [*out* (java.io.StringWriter.)](defn ensure-dir [path]
+(defn ensure-dir [path]
   (let [dir (io/file path)]
     (when-not (.exists dir)
-      (.mkdirs dir))))))
+      (.mkdirs dir))))
 
-(prn (binding [*out* (java.io.StringWriter.)](defn final-render []
+(defn final-render []
   (ensure-dir publics)
   (ensure-dir public-styles)
   (convert-all-to-html edn-docs)
   (convert-all-to-css edn-styles))
 
-
 (defn get-pages []
   (stasis/merge-page-sources
    {:public (stasis/slurp-directory "resources/public" #".*\.(html|css|png|ico|webmanifest)$")}))
 
-
 (defn get-assets []
-  (assets/load-assets "public" [#"/styles/.*" #"/img/.*\.(PNG|GIF|JPG|JPEG|BMP)"]))))
+  (assets/load-assets "public" [#"/styles/.*" #"/img/.*\.(PNG|GIF|JPG|JPEG|BMP)"]))
 
-(prn (binding [*out* (java.io.StringWriter.)](defn delete-safe [file-path]
+(defn delete-safe [file-path]
   (if (.exists (io/file file-path))
     (try
       (io/delete-file file-path)
@@ -105,11 +99,7 @@
         del-files (filter #(.isFile %) dir-contents)]
     (doseq [file del-files]
       (delete-safe (.getPath file)))
-    (delete-safe dir-path)))))
-
-(prn (binding [*out* (java.io.StringWriter.)](def export-dir "./dist")
-(def export-style-dir "./dist/styles")
-
+    (delete-safe dir-path)))
 
 (defn clean []
   (delete-dir export-dir)
@@ -126,8 +116,9 @@
   (let [assets (optimizations/all (get-assets) {})]
     (stasis/empty-directory! export-dir)
     (optimus.export/save-assets assets export-dir)
-    (stasis/export-pages (get-pages) export-dir {:optimus-assets assets})))))
+    (stasis/export-pages (get-pages) export-dir {:optimus-assets assets})))
 
-(prn (binding [*out* (java.io.StringWriter.)](def app (-> (stasis/serve-pages get-pages)
+
+(def app (-> (stasis/serve-pages get-pages)
              (optimus/wrap get-assets optimizations/all serve-live-assets)
-             wrap-content-type))))
+             wrap-content-type))
