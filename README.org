@@ -5,19 +5,25 @@
 
 * Introduction
 The web sux, need i say more?
-* IT SUCKS
-** HTML:
+** IT SUCKS
+**** HTML:
 =angle-bracket=
+
 <<<exx em ell>>>
+
 =angle-bracket=
+
 /something something something/ *tags*
-** CSS:
-- Every programmer is /obviously/ an Epistomologist.
-- Because /everyone/ wanted to consider the true nature of what makes /a style/ *style*
-- Stop, colors aren't objects. Just let me center a div, *goddamn!*
-** JavaScript:
-- "ookay, so we load a 4 megabyte script to make my 2.71 megabyte website load faster?"
-- "that's... /a trade off/"
+**** CSS:
+Every programmer is /obviously/ an Epistomologist.
+  
+Because /everyone/ wanted to consider the true nature of what makes /a style/ *style*
+
+Stop, colors aren't objects. Just let me center a div, *goddamn!*
+**** JavaScript:
+"ookay, so we load a 4 megabyte script to make my 2.71 megabyte website load faster?"
+
+"that's... /a trade off/"
 * Clojure GUD:
 
-* IT JUST IS!
+*** IT JUST IS!
