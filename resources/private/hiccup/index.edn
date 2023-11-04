@@ -1,6 +1,8 @@
 ([:head
   [:meta {:charset "utf-8"}]
-  [:meta {:content "width=device-width, initial-scale=1.0", :name "viewport"}]
+  [:meta
+   {:content "width=device-width, initial-scale=1.0",
+    :name "viewport"}]
   [:title "Srcerizder!"]
   [:link {:href "/styles/main.css", :rel "stylesheet"}]
   [:link
@@ -18,58 +20,94 @@
     :sizes "16x16",
     :href "/favicon-16x16.png"}]
   [:link {:rel "manifest", :href "/site.webmanifest"}]]
- [:header
-  [:div
-   {:class "title-container"}
-   [:h1 "Srcerizder's Homepage"]
-   [:h3 "(Or Something)"]]]
- [:section
-  {:id "summary-container"}
-  [:p
-   [:b "SUM INFOZ:"]
-   [:br] [:br]
-   [:b ">> I'm Currently Learning "] ": Common Lisp, Clojure, & StumpWM. " [:br]
-   [:b ">> Ask Me About "] ": OpenBSD, Gentoo, Ricing *NIX, Music Theory, & Calculators." [:br]
-   [:b ">> I Love"] ": Music Theory, Being Queer, Tech " [:i "(duh) "] ", & Linguistics." [:br]
-   [:b ">> Fun Fact "] ": I " [:i "will not "] "help you if you don't put in the effort " [:b "first "] "." [:br]]]
- [:section
-  {:id "content-container"}
-  [:div
-   {:class "list-container"}
+ [:div
+  {:class "title-container"}
+  [:h1 "Srcerizder's Homepage"]
+  [:h3 "(Or Something)"]]
+ [:div
+  [:span
+   {:id "summary-container"}
+   [:p
+    [:b "SUM INFOZ:"]
+    [:br]
+    [:b ">> I'm Currently Learning "]
+    ": Common Lisp, Clojure, & StumpWM. "
+    [:br]
+    [:b ">> Ask Me About "]
+    ": OpenBSD, Gentoo, Ricing *NIX, Music Theory, & Calculators."
+    [:br]
+    [:b ">> I Love"]
+    ": Music Theory, Being Queer, Tech "
+    [:br]
+    [:i "(duh) "]
+    ", & Linguistics."
+    [:br]
+    [:b ">> Fun Fact "]
+    ": I "
+    [:br]
+    [:i "will not "]
+    "help you if you don't put in the effort "
+    [:br]
+    [:b "first "]
+    "."
+    [:br]]]
+  [:span
    [:h4 "Personal Stuffs"]
    [:ul
-    [:li [:a {:rel "me", :href "https://en.pronouns.page/@izder456"} "Pronouns"]]
-    [:li [:a {:rel "me", :href "https://izder456.tumblr.com/"} "Tumblr"]]
-    [:li [:a {:rel "me", :href "mailto:izder456@disroot.org?subject=Hi"} "eMail"]]]
+    [:li
+     [:a
+      {:rel "me", :href "https://en.pronouns.page/@izder456"}
+      "Pronouns"]]
+    [:li
+     [:a {:rel "me", :href "https://izder456.tumblr.com/"} "Tumblr"]]
+    [:li
+     [:a
+      {:rel "me", :href "mailto:izder456@disroot.org?subject=Hi"}
+      "eMail"]]]
    [:center [:img {:src "/img/SRCERIZDER.PNG"}]]]
-  [:div
-   {:class "list-container"}
+  [:span
    [:h4 "Music Stuffs"]
    [:ul
-    [:li [:a {:rel "me", :href "https://soundcloud.com/izder456"} "Soundcloud"]]
-    [:li [:a {:rel "me", :href "https://izder456.bandcamp.com/"} "Bandcamp"]]]]
-  [:div
-   {:class "list-container"}
+    [:li
+     [:a
+      {:rel "me", :href "https://soundcloud.com/izder456"}
+      "Soundcloud"]]
+    [:li
+     [:a
+      {:rel "me", :href "https://izder456.bandcamp.com/"}
+      "Bandcamp"]]]]
+  [:span
    [:h4 "Social Stuffs"]
    [:ul
-    [:li [:a {:rel "me", :href "https://bsky.app/profile/izder456.bsky.social"} "Bsky.app"]]
-    [:li [:a {:rel "me", :href "https://mastodon.unixhideout.solutions/@izder456"} "Mastodon"]]
-    [:li [:a {:rel "me", :href "https://libranet.de/profile/izder456"} "Friendi.ca"]]]]
-  [:div
-   {:class "list-container"}
+    [:li
+     [:a
+      {:rel "me",
+       :href "https://bsky.app/profile/izder456.bsky.social"}
+      "Bsky.app"]]
+    [:li
+     [:a
+      {:rel "me", :href "https://libranet.de/profile/izder456"}
+      "Friendi.ca"]]]]
+  [:span
    [:h4 "Tech Stuffs"]
    [:ul
-    [:li [:a {:rel "me", :href "https://github.com/izder456"} "Github"]]
-    [:li [:a {:rel "me", :href "https://unixhideout.solutions/geeklog"} "GeekLog I Co-Moderate"]]
-    [:li [:a {:rel "me", :href "https://unixhideout.solutions"} "Group I Co-Moderate"]]]]]
- [:section
-  {:id "mesg-container"}
-  [:img {:src "/img/ARROWGRUV.GIF"}]
-  [:p
-   [:b [:a {:href "#top"} "back to " [:code "$(head -n1)"] " ?"]] [:br]
-   [:b [:a {:href "./index.html"} "back to " [:code "$home"] " ?"]] [:br]]]
- [:img {:src "/img/ARROWGRUV.GIF"}]
- [:footer
-  [:center
-   [:h3 "GOOBYE!!!!1!!1"]
-   [:img {:src "/img/GOOBYEGRUV.GIF"}]]])
+    [:li
+     [:a
+      {:rel "me", :href "https://github.com/izder456"}
+      "Github"]]]]
+  [:span
+   [:p
+    [:img {:src "/img/ARROWGRUV.GIF"}]
+    [:br]
+    [:b [:a {:href "#top"} "back to " [:code "$(head -n1)"] " ?"]]
+    [:br]
+    [:b [:a {:href "./index.html"} "back to " [:code "$home"] " ?"]]
+    [:br]
+    [:b [:a {:href "./README.html"} "secret page!"]]
+    [:br]
+    [:b [:a {:href "./index.html"} "index page!"]]
+    [:br]
+    [:br]
+    [:img {:src "/img/ARROWGRUV.GIF"}]
+    [:br]]]]
+ [:center [:h3 "GOOBYE!!!!1!!1"] [:img {:src "/img/GOOBYEGRUV.GIF"}]])
