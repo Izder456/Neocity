@@ -28,37 +28,43 @@
   [:span
    {:id "summary-container"}
    [:p
-    [:b "SUM INFOZ:"][:br]
+    [:b "SUM INFOZ:"]
+    [:br]
     [:b ">> I'm Currently Learning "]
-    ": Common Lisp, Clojure, & StumpWM. "[:br]
+    ": Common Lisp, Clojure, & StumpWM. "
+    [:br]
     [:b ">> Ask Me About "]
-    ": OpenBSD, Gentoo, Ricing *NIX, Music Theory, & Calculators."[:br]
+    ": OpenBSD, Gentoo, Ricing *NIX, Music Theory, & Calculators."
+    [:br]
     [:b ">> I Love"]
-    ": Music Theory, Being Queer, Tech "[:br]
+    ": Music Theory, Being Queer, Tech "
+    [:br]
     [:i "(duh) "]
-    ", & Linguistics."[:br]
+    ", & Linguistics."
+    [:br]
     [:b ">> Fun Fact "]
-    ": I "[:br]
+    ": I "
+    [:br]
     [:i "will not "]
-    "help you if you don't put in the effort "[:br]
+    "help you if you don't put in the effort "
+    [:br]
     [:b "first "]
-    "."[:br]]]
+    "."
+    [:br]]]
   [:span
-    [:h4 "Personal Stuffs"]
-    [:ul
-     [:li
-      [:a
-       {:rel "me", :href "https://en.pronouns.page/@izder456"}
-       "Pronouns"]]
-     [:li
-      [:a
-       {:rel "me", :href "https://izder456.tumblr.com/"}
-       "Tumblr"]]
-     [:li
-      [:a
-       {:rel "me", :href "mailto:izder456@disroot.org?subject=Hi"}
-       "eMail"]]]
-    [:center [:img {:src "/img/SRCERIZDER.PNG"}]]]
+   [:h4 "Personal Stuffs"]
+   [:ul
+    [:li
+     [:a
+      {:rel "me", :href "https://en.pronouns.page/@izder456"}
+      "Pronouns"]]
+    [:li
+     [:a {:rel "me", :href "https://izder456.tumblr.com/"} "Tumblr"]]
+    [:li
+     [:a
+      {:rel "me", :href "mailto:izder456@disroot.org?subject=Hi"}
+      "eMail"]]]
+   [:center [:img {:src "/img/SRCERIZDER.PNG"}]]]
   [:span
    [:h4 "Music Stuffs"]
    [:ul
@@ -99,9 +105,9 @@
     [:br]
     [:b [:a {:href "./README.html"} "secret page!"]]
     [:br]
+    [:b [:a {:href "./index.html"} "index page!"]]
+    [:br]
+    [:br]
     [:img {:src "/img/ARROWGRUV.GIF"}]
     [:br]]]]
- [:div
-  [:center
-   [:h3 "GOOBYE!!!!1!!1"]
-   [:img {:src "/img/GOOBYEGRUV.GIF"}]]])
+ [:center [:h3 "GOOBYE!!!!1!!1"] [:img {:src "/img/GOOBYEGRUV.GIF"}]])

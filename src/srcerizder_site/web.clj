@@ -52,16 +52,29 @@
                   [:link {:rel "manifest", :href "/site.webmanifest"}]))
 
 (def footer (list [:footer
-                   [:center
-                    [:h3 "GOOBYE!!!!1!!1"]
-                    [:img {:src "/img/GOOBYEGRUV.GIF"}]]]))
+                   [:span
+                    [:p
+                     [:img {:src "/img/ARROWGRUV.GIF"}]
+                     [:br]
+                     [:b [:a {:href "#top"} "back to " [:code "$(head -n1)"] " ?"]]
+                     [:br]
+                     [:b [:a {:href "./index.html"} "back to " [:code "$home"] " ?"]]
+                     [:br]
+                     [:b [:a {:href "./README.html"} "secret page!"]] [:br]
+                     [:b [:a {:href "./index.html"} "index page!"]] [:br]
+                     [:br]
+                     [:img {:src "/img/ARROWGRUV.GIF"}]
+                     [:br]]]]
+                  [:center
+                   [:h3 "GOOBYE!!!!1!!1"]
+                   [:img {:src "/img/GOOBYEGRUV.GIF"}]]))
 
 (defn convert-org-to-edn [org-filename]
   (let [base-filename (-> org-filename
                           (string/replace #"\.org$" ""))
         edn-filename (os/path-append edn-docs (str base-filename ".edn"))
         org-data (cljorg/parse-org (slurp org-filename))
-        edn (list (merge header (:content org-data)))]
+        edn (list (merge header (:content org-data) footer))]
     (spit edn-filename edn)))
 
 (defn convert-to-html [edn-filename]

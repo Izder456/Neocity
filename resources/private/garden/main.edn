@@ -11,10 +11,8 @@
   {:max-width "640px"}
   {:outline "4px solid #A89984"}
   {:font-family "serif"}]
- [:div
-  {:padding "10px 10px"}]
- [:span
-  {:padding "10px 10px"}]
+ [:div {:padding "10px 10px"}]
+ [:span {:padding "10px 10px"}]
  [:p
   {:font-size "100%"}
   {:line-height "125%"}
@@ -48,10 +46,13 @@
    {:color "#98971A"}
    {:text-shadow "0px 0px 1px #698D6A, 0px 1px 1px #79740E"}]]
  [:code
-  {:font-size "100%"} {:font-family "monospace"} [:line-height "125%"]]
+  {:font-size "100%"}
+  {:font-family "monospace"}
+  [:line-height "125%"]]
  [:pre
   {:font-size "100%"}
-  {:font-family "monospace"} [:line-height "125%"]]
+  {:font-family "monospace"}
+  [:line-height "125%"]]
  [:ul
   {:font-size "100%"}
   {:line-height "125%"}

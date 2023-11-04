@@ -1,29 +1,37 @@
-#+TITLE: MODERN WEB SUX, Return to LISPs
-#+AUTHOR: izder456
+* Srcerizder's Neocity
 
-* This is a joke
+** Overview
+   - *Srcerizder's Neocity*: [My Clojure-Based Neocity]
 
-* Introduction
-The web sux, need i say more?
-** IT SUCKS
-**** HTML:
-=angle-bracket=
+   - *Date:* [The grind never stops]
 
-<<<exx em ell>>>
+   - *Author:* [The Srcerizder]
+     
+** Introduction
+- Intended as an +autistic+ /artistic/ personal replacement for Linktr.ee
 
-=angle-bracket=
+- This can be thought of as a form of interweb portfolio.
 
-/something something something/ *tags*
-**** CSS:
-Every programmer is /obviously/ an Epistomologist.
+- It is intentionally dated looking, and minimal. I *will not* be modernizing this to look like =generic_template.css=
+
+- /I won't provide support for any issues on your machine, as this is a pet project./
+
+*** Why Clojure?
+- /Because funy/
   
-Because /everyone/ wanted to consider the true nature of what makes /a style/ *style*
+- /Because I can/
+  
+- /Because I didn't like raw editing my html+css/
+  
+*** Libraries used:
+- *For CSS:* [[https://github.com/noprompt/garden][Garden]]
 
-Stop, colors aren't objects. Just let me center a div, *goddamn!*
-**** JavaScript:
-"ookay, so we load a 4 megabyte script to make my 2.71 megabyte website load faster?"
+- *For HTML:* [[https://github.com/weavejester/hiccup][Hiccup]]
 
-"that's... /a trade off/"
-* Clojure GUD:
+- *For Rendering this very ORG Document:* [[https://github.com/eigenhombre/clj-org][eigenhombre/clj-org]]
 
-*** IT JUST IS!
+- *For Optimization:* [[https://github.com/magnars/optimus][Optimus]]
+
+- *For Testing:* [[https://github.com/ring-clojure/ring][ring]]
+
+- *For Static Generation:* [[https://github.com/magnars/stasis][Stasis]] 
