@@ -23,8 +23,9 @@
 (def export-dir "./dist")
 (def export-style-dir "./dist/styles")
 
-;; Ensure Dir is there, otherwise make it!
-(defn ensure-dir [path]
+(defn ensure-dir
+  "Ensure Dir is there, otherwise make it!"
+  [path]
   (let [dir (io/file path)]
     (when-not (.exists dir)
       (.mkdirs dir))))
@@ -57,9 +58,9 @@
     (delete-safe dir-path)))
 
 (defn clean []
- (let [dirs [export-dir export-style-dir (str publics [#"\.html$"]) public-styles]]
-   (doseq [dir dirs]
-     (delete-dir dir))))
+  (let [dirs [export-dir export-style-dir (str publics [#"\.html$"]) public-styles]]
+    (doseq [dir dirs]
+      (delete-dir dir))))
 
 (defn export []
   (clean)
