@@ -57,11 +57,10 @@
       (delete-safe (.getPath file)))
     (delete-safe dir-path)))
 
-(defn clean [];
-  (delete-dir export-dir)
-  (delete-dir export-style-dir)
-  (delete-dir (str publics [#"\.html$"]))
-  (delete-dir public-styles))
+(defn clean []
+ (let [dirs [export-dir export-style-dir (str publics [#"\.html$"]) public-styles]]
+   (doseq [dir dirs]
+     (delete-dir dir))))
 
 (defn export []
   (clean)
