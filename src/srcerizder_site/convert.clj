@@ -2,7 +2,6 @@
   (:require
    [garden.core :as garden]
    [hiccup2.core :as hiccup2]
-   [clj-org.org :as cljorg]
    [clojure.edn :as edn]
    [clojure.java.io :as io]
    [clojure.string :as string]

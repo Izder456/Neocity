@@ -5,12 +5,11 @@
             :url "https://www.wtfpl.net/"}
   :plugins [[dev.weavejester/lein-cljfmt "0.11.2"]]
   :dependencies [[org.clojure/clojure "1.10.3"]
-                 [stasis "2023.06.03"]
-                 [ring "1.10.0"]
+                 [stasis "2023.11.21"]
+                 [ring "1.11.0-RC2"]
                  [garden "1.3.10"]
-                 [hiccup "2.0.0-RC1"]
-                 [clj-org "0.0.3"]
-                 [optimus "2023-02-08"]]
+                 [hiccup "2.0.0-RC2"]
+                 [optimus "2023.11.21"]]
   :ring {:handler srcerizder-site.web/app}
   :aliases {"build-site" ["run" "-m" "srcerizder-site.web/export"]
             "clean-site" ["run" "-m" "srcerizder-site.web/clean"]
