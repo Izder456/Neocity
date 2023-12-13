@@ -103,8 +103,6 @@
     [:br]
     [:b [:a {:href "./index.html"} "back to " [:code "$home"] " ?"]]
     [:br]
-    [:b [:a {:href "./README.html"} "secret page!"]]
-    [:br]
     [:b [:a {:href "./index.html"} "index page!"]]
     [:br]
     [:br]

@@ -18,7 +18,6 @@
 ;; Private Data
 (def edn-docs "resources/private/hiccup")
 (def edn-styles "resources/private/garden")
-(def org-docs "README.org")
 
 ;; Export Dirs
 (def export-dir "./dist")

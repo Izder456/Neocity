@@ -15,11 +15,6 @@
 ;; Private Data
 (def edn-docs "resources/private/hiccup")
 (def edn-styles "resources/private/garden")
-(def org-docs "README.org")
-
-;; Export Dirs
-(def export-dir "./dist")
-(def export-style-dir "./dist/styles")
 
 (def header (list [:head [:meta {:charset "utf-8"}]
                    [:meta {:content "width=device-width, initial-scale=1.0", :name "viewport"}]
@@ -63,41 +58,30 @@
 (defn load-edn [filename]
   (edn/read-string (slurp filename)))
 
-(defn org-to-edn [org-filename]
-  (let [base-filename (-> org-filename
-                          (string/replace #"\.org$" ""))
-        edn-filename (os/path-append edn-docs (str base-filename ".edn"))
-        org-data (cljorg/parse-org (slurp org-filename))
-        edn (list (merge header (:content org-data) footer))]
-    (spit edn-filename edn)))
+(defn- load-and-generate-filename [edn-filename base-dir ext]
+ (let [base-filename (-> edn-filename
+                        (os/basename)
+                        (string/replace #"\.edn$" ""))
+       filename (os/path-append base-dir (str base-filename ext))
+       edn-data (load-edn edn-filename)]
+   [filename edn-data]))
 
-(defn hiccup-to-html [edn-filename]
-  (let [base-filename (-> edn-filename
-                          (os/basename)
-                          (string/replace #"\.edn$" ""))
-        html-filename (os/path-append publics (str base-filename ".html"))
-        hiccup-data (load-edn edn-filename)
-        html (str (hiccup2/html hiccup-data))]
-    (spit html-filename html)))
+(defn- hiccup-to-html [edn-filename]
+ (let [[html-filename hiccup-data] (load-and-generate-filename edn-filename publics ".html")]
+   (spit html-filename (str (hiccup2/html hiccup-data)))))
 
-(defn garden-to-css [edn-stylename]
-  (let [base-filename (-> edn-stylename
-                          (os/basename)
-                          (string/replace #"\.edn$" ""))
-        css-filename (os/path-append public-styles (str base-filename ".css"))
-        garden-data (load-edn edn-stylename)
-        css (str (garden/css garden-data))]
-    (spit css-filename css)))
+(defn- garden-to-css [edn-stylename]
+ (let [[css-filename garden-data] (load-and-generate-filename edn-stylename public-styles ".css")]
+   (spit css-filename (str (garden/css garden-data)))))
+
+(defn- process-files [edn-directory process-fn]
+ (let [edn-files (file-seq (io/file edn-directory))]
+   (doseq [edn-file edn-files
+           :when (string/ends-with? edn-file ".edn")]
+     (process-fn edn-file))))
 
 (defn all-to-html [edn-directory]
-  (org-to-edn org-docs)
-  (let [edn-files (file-seq (io/file edn-directory))]
-    (doseq [edn-file edn-files
-            :when (string/ends-with? edn-file ".edn")]
-      (hiccup-to-html edn-file))))
+ (process-files edn-directory hiccup-to-html))
 
 (defn all-to-css [edn-directory]
-  (let [edn-styles (file-seq (io/file edn-directory))]
-    (doseq [edn-style edn-styles
-            :when (string/ends-with? edn-style ".edn")]
-      (garden-to-css edn-style))))
+ (process-files edn-directory garden-to-css))
