@@ -5,55 +5,10 @@
    [clojure.edn :as edn]
    [clojure.java.io :as io]
    [clojure.string :as string]
+   [srcerizder-site.global :as global]
    [srcerizder-site.os :as os]))
 
-;; Public Dirs
-(def publics "resources/public/")
-(def public-styles "resources/public/styles/")
-
-;; Private Data
-(def edn-docs "resources/private/hiccup")
-(def edn-styles "resources/private/garden")
-
-(def header (list [:head [:meta {:charset "utf-8"}]
-                   [:meta {:content "width=device-width, initial-scale=1.0", :name "viewport"}]
-                   [:title "Srcerizder!"]
-                   [:link {:href "/styles/main.css", :rel "stylesheet"}]]
-                  [:link
-                   {:rel "apple-touch-icon",
-                    :sizes "180x180",
-                    :href "/apple-touch-icon.png"}]
-                  [:link
-                   {:rel "icon",
-                    :type "image/png",
-                    :sizes "32x32",
-                    :href "/favicon-32x32.png"}]
-                  [:link
-                   {:rel "icon",
-                    :type "image/png",
-                    :sizes "16x16",
-                    :href "/favicon-16x16.png"}]
-                  [:link {:rel "manifest", :href "/site.webmanifest"}]))
-
-(def footer (list [:footer
-                   [:span
-                    [:p
-                     [:img {:src "/img/ARROWGRUV.GIF"}]
-                     [:br]
-                     [:b [:a {:href "#top"} "back to " [:code "$(head -n1)"] " ?"]]
-                     [:br]
-                     [:b [:a {:href "./index.html"} "back to " [:code "$home"] " ?"]]
-                     [:br]
-                     [:b [:a {:href "./README.html"} "secret page!"]] [:br]
-                     [:b [:a {:href "./index.html"} "index page!"]] [:br]
-                     [:br]
-                     [:img {:src "/img/ARROWGRUV.GIF"}]
-                     [:br]]]]
-                  [:center
-                   [:h3 "GOOBYE!!!!1!!1"]
-                   [:img {:src "/img/GOOBYEGRUV.GIF"}]]))
-
-(defn load-edn [filename]
+(defn- load-edn [filename]
   (edn/read-string (slurp filename)))
 
 (defn- load-and-generate-filename
@@ -69,13 +24,13 @@
 (defn- hiccup-to-html
   "Hiccup EDN data to html conversion"
   [edn-filename]
-  (let [[html-filename hiccup-data] (load-and-generate-filename edn-filename publics ".html")]
+  (let [[html-filename hiccup-data] (load-and-generate-filename edn-filename @global/publics ".html")]
     (spit html-filename (str (hiccup2/html hiccup-data)))))
 
 (defn- garden-to-css
   "Garden EDN data to css conversion"
   [edn-stylename]
-  (let [[css-filename garden-data] (load-and-generate-filename edn-stylename public-styles ".css")]
+  (let [[css-filename garden-data] (load-and-generate-filename edn-stylename @global/public-styles ".css")]
     (spit css-filename (str (garden/css garden-data)))))
 
 (defn- process-files

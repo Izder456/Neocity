@@ -8,69 +8,58 @@
             [optimus.strategies :refer [serve-live-assets]]
             [clojure.java.io :as io]
             [stasis.core :as stasis]
+            [srcerizder-site.global :as global]
             [srcerizder-site.os :as os]
             [srcerizder-site.convert :as convert]))
 
-;; Public Dirs
-(def publics "resources/public/")
-(def public-styles "resources/public/styles/")
-
-;; Private Data
-(def edn-docs "resources/private/hiccup")
-(def edn-styles "resources/private/garden")
-
-;; Export Dirs
-(def export-dir "./dist")
-(def export-style-dir "./dist/styles")
-
-(defn ensure-dir
+(defn- ensure-dir
   "Ensure Dir is there, otherwise make it!"
   [path]
   (let [dir (io/file path)]
     (when-not (.exists dir)
       (.mkdirs dir))))
 
-(defn final-render []
-  (ensure-dir publics)
-  (ensure-dir public-styles)
-  (convert/all-to-html edn-docs)
-  (convert/all-to-css edn-styles))
+(defn- final-render []
+  (ensure-dir @global/publics)
+  (ensure-dir @global/public-styles)
+  (convert/all-to-html @global/edn-docs)
+  (convert/all-to-css @global/edn-styles))
 
-(defn get-pages []
+(defn- get-pages []
   (stasis/merge-page-sources
    {:public (stasis/slurp-directory "resources/public" #".\.(html|css|png|ico|webmanifest)$")}))
 
-(defn get-assets []
+(defn- get-assets []
   (assets/load-assets "public" [#"/styles/." #"/img/.*\.(PNG|GIF|JPG|JPEG|BMP)"]))
 
-(defn delete-safe [file-path]
+(defn- delete-safe [file-path]
   (if (.exists (io/file file-path))
     (try
       (io/delete-file file-path)
       (catch Exception e (str "Exception caught: " (.getMessage e))))
     false))
 
-(defn delete-dir [dir-path]
+(defn- delete-dir [dir-path]
   (let [dir-contents (file-seq (io/file dir-path))
         del-files (filter #(.isFile %) dir-contents)]
     (doseq [file del-files]
       (delete-safe (.getPath file)))
     (delete-safe dir-path)))
 
-(defn clean []
-  (let [dirs [export-dir export-style-dir (str publics [#"\.html$"]) public-styles]]
+(defn- clean []
+  (let [dirs [@global/export-dir @global/export-style-dir (str @global/publics [#"\.html$"]) @global/public-styles]]
     (doseq [dir dirs]
       (delete-dir dir))))
 
-(defn export []
+(defn- export []
   (clean)
   (final-render)
-  (ensure-dir export-dir)
-  (ensure-dir export-style-dir)
+  (ensure-dir @global/export-dir)
+  (ensure-dir @global/export-style-dir)
   (let [assets (optimizations/all (get-assets) {})]
-    (stasis/empty-directory! export-dir)
-    (optimus.export/save-assets assets export-dir)
-    (stasis/export-pages (get-pages) export-dir {:optimus-assets assets})))
+    (stasis/empty-directory! @global/export-dir)
+    (optimus.export/save-assets assets @global/export-dir)
+    (stasis/export-pages (get-pages) @global/export-dir {:optimus-assets assets})))
 
 (def app (-> (stasis/serve-pages get-pages)
              (optimus/wrap get-assets optimizations/all serve-live-assets)
