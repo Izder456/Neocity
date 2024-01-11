@@ -1,4 +1,4 @@
-;; namespace for global variables 
+;; namespace for global variables
 (ns srcerizder-site.global)
 
 ;; Public Dirs
@@ -10,5 +10,5 @@
 (def edn-styles (atom "resources/private/garden"))
 
 ;; Export Dirs
-(def export-dir (atom "./dist"))
-(def export-style-dir (atom "./dist/styles"))
+(def export-dir (atom "dist"))
+(def export-style-dir (atom "dist/styles"))
