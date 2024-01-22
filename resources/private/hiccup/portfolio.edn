@@ -1,0 +1,77 @@
+([:head
+  [:meta {:charset "utf-8"}]
+  [:meta
+   {:content "width=device-width, initial-scale=1.0",
+    :name "viewport"}]
+  [:title "Srcerizder!"]
+  [:link {:href "/styles/main.css", :rel "stylesheet"}]
+  [:link
+   {:rel "apple-touch-icon",
+    :sizes "180x180",
+    :href "/apple-touch-icon.png"}]
+  [:link
+   {:rel "icon",
+    :type "image/png",
+    :sizes "32x32",
+    :href "/favicon-32x32.png"}]
+  [:link
+   {:rel "icon",
+    :type "image/png",
+    :sizes "16x16",
+    :href "/favicon-16x16.png"}]
+  [:link {:rel "manifest", :href "/site.webmanifest"}]]
+ [:div
+  {:class "title-container"}
+  [:h1 "Izzy Meyer"]
+  [:h3 "Portfolio"]]
+ [:center [:img {:src "/img/SRCERIZDER.PNG"}]]
+ [:span
+  {:class "summary-container"}
+  [:p
+   [:h4 "Projects"]
+   [:ul
+    [:li
+     [:a
+      {:rel "me", :href "https://github.com/izder456"}
+      "Github Profile"]
+     [:br]]
+    [:li
+     [:b
+      "I home-cooked this very website from the ground up in Clojure"]
+     [:br]
+     [:a
+      {:href "https://github.com/Izder456/Neocity.git"}
+      "Neocity Project Page"]]
+    [:li
+     [:b "I contributed to the Funtoo Linux Project"]
+     [:br]
+     [:a
+      {:href
+       "https://forums.funtoo.org/blogs/entry/21-funtoo-newsletter-summer-2023/"}
+      "Funtoo Linux Project Involvement"]
+     [:br]]
+    [:li
+     [:b "I built two ports for OpenBSD"]
+     [:br]
+     [:a
+      {:href "https://cvsweb.openbsd.org/ports/games/bugdom/"}
+      "games/bugdom"]
+     [:br]
+     [:a
+      {:href "https://cvsweb.openbsd.org/ports/games/bugdom2/"}
+      "games/bugdom2"]
+     [:br]]]]]
+ [:span
+  [:p
+   [:img {:src "/img/ARROWGRUV.GIF"}]
+   [:br]
+   [:b [:a {:href "#top"} "back to " [:code "$(head -n1)"] " ?"]]
+   [:br]
+   [:b [:a {:href "./index.html"} "back to " [:code "$home"] " ?"]]
+   [:br]
+   [:b [:a {:href "./index.html"} "index page!"]]
+   [:br]
+   [:br]
+   [:img {:src "/img/ARROWGRUV.GIF"}]
+   [:br]]]
+ [:center [:h3 "GOOBYE!!!!1!!1"] [:img {:src "/img/GOOBYEGRUV.GIF"}]])

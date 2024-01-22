@@ -6,7 +6,7 @@
    - *Date:* [The grind never stops]
 
    - *Author:* [The Srcerizder]
-     
+
 ** Introduction
 - Intended as an +autistic+ /artistic/ personal replacement for Linktr.ee
 
@@ -18,20 +18,18 @@
 
 *** Why Clojure?
 - /Because funy/
-  
+
 - /Because I can/
-  
+
 - /Because I didn't like raw editing my html+css/
-  
+
 *** Libraries used:
 - *For CSS:* [[https://github.com/noprompt/garden][Garden]]
 
 - *For HTML:* [[https://github.com/weavejester/hiccup][Hiccup]]
 
-- *For Rendering this very ORG Document:* [[https://github.com/eigenhombre/clj-org][eigenhombre/clj-org]]
-
 - *For Optimization:* [[https://github.com/magnars/optimus][Optimus]]
 
 - *For Testing:* [[https://github.com/ring-clojure/ring][ring]]
 
-- *For Static Generation:* [[https://github.com/magnars/stasis][Stasis]] 
+- *For Static Generation:* [[https://github.com/magnars/stasis][Stasis]]
