@@ -52,19 +52,13 @@
     "."
     [:br]]]
   [:span
-   [:h4 "Personal Stuffs"]
+   [:h4 "Portfolio"]
    [:ul
     [:li
      [:a
-      {:rel "me", :href "https://en.pronouns.page/@izder456"}
-      "Pronouns"]]
-    [:li
-     [:a {:rel "me", :href "https://izder456.tumblr.com/"} "Tumblr"]]
-    [:li
-     [:a
-      {:rel "me", :href "mailto:izder456@disroot.org?subject=Hi"}
-      "eMail"]]]
-   [:center [:img {:src "/img/SRCERIZDER.PNG"}]]]
+      {:rel "me", :href "./portfolio.html"}
+      "My Portfolio Page"]]]]
+   [:center [:img {:src "/img/SRCERIZDER.PNG"}]]
   [:span
    [:h4 "Music Stuffs"]
    [:ul
