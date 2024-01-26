@@ -1,35 +1,42 @@
-* Srcerizder's Neocity
+#+title: Srcerizder's Neocity
+#+author: izzy Meyer
 
-** Overview
-   - *Srcerizder's Neocity*: [My Clojure-Based Neocity]
+* Introduction
 
-   - *Date:* [The grind never stops]
+My personal Neocity page built 100% in clojure.
 
-   - *Author:* [The Srcerizder]
 
-** Introduction
-- Intended as an +autistic+ /artistic/ personal replacement for Linktr.ee
+#+BEGIN_HTML
+<div align="left">
+ <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/izder456/neocity?style=plastic">
+  <img alt="Lines of code" src="https://tokei.rs/b1/github/izder456/neocity?category=code&style=plastic">
+</div>
+#+END_HTML
 
-- This can be thought of as a form of interweb portfolio.
 
-- It is intentionally dated looking, and minimal. I *will not* be modernizing this to look like =generic_template.css=
+* Installation
 
-- /I won't provide support for any issues on your machine, as this is a pet project./
+** Dependencies:
 
-*** Why Clojure?
-- /Because funy/
++ [[Leininchen][https://leiningen.org/]]
++ [[Clojure][https://clojure.org/]]
 
-- /Because I can/
+** Grab clojars:
 
-- /Because I didn't like raw editing my html+css/
+#+BEGIN_SRC sh
+$ lein deps
+#+END_SRC
 
-*** Libraries used:
-- *For CSS:* [[https://github.com/noprompt/garden][Garden]]
+** Clean, then Build site:
 
-- *For HTML:* [[https://github.com/weavejester/hiccup][Hiccup]]
+#+BEGIN_SRC sh
+$ lein clean-site
+$ lein build-site
+#+END_SRC
 
-- *For Optimization:* [[https://github.com/magnars/optimus][Optimus]]
+** Run Ring Server for testing exported static site:
 
-- *For Testing:* [[https://github.com/ring-clojure/ring][ring]]
-
-- *For Static Generation:* [[https://github.com/magnars/stasis][Stasis]]
+#+BEGIN_SRC sh
+$ lein ring server # launches xdg-open with browser to the server
+$ lein ring server-headless # just launches server, connect to it at http://127.0.0.1:3000
+#+END_SRC
