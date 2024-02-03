@@ -51,7 +51,7 @@
       "Funtoo Linux Project Involvement"]
      [:br]]
     [:li
-     [:b "I built two ports for OpenBSD"]
+     [:b "I built some ports for OpenBSD"]
      [:br]
      [:a
       {:href "https://cvsweb.openbsd.org/ports/games/bugdom/"}
@@ -60,6 +60,14 @@
      [:a
       {:href "https://cvsweb.openbsd.org/ports/games/bugdom2/"}
       "games/bugdom2"]
+     [:br]
+     [:a
+      {:href "https://cvsweb.openbsd.org/ports/games/ottomatic/"}
+      "games/ottomatic"]
+     [:br]
+     [:a
+      {:href "https://cvsweb.openbsd.org/ports/games/cromagrally/"}
+      "games/cromagrally"]
      [:br]]]]]
  [:span
   [:p
