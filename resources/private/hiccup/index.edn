@@ -80,15 +80,37 @@
       "Bsky.app"]]
     [:li
      [:a
-      {:rel "me", :href "https://libranet.de/profile/izder456"}
-      "Friendi.ca"]]]]
+      {:rel "me",
+       :href "https://izder456.tumblr.com"}
+      "Tumblr"]]
+    [:li
+     [:a
+      {:rel "me",
+       :href "https://libranet.de/profile/izder456"}
+      "Friendi.ca"]]
+    [:li
+     [:a
+      {:rel "me",
+       :href "https://spacehey.com/profile?id=2004267"}
+      "Spacehey"]]]]
   [:span
    [:h4 "Tech Stuffs"]
    [:ul
     [:li
      [:a
-      {:rel "me", :href "https://github.com/izder456"}
-      "Github"]]]]
+      {:rel "me",
+       :href "https://github.com/izder456"}
+      "Github"]]
+    [:li
+     [:a
+      {:rel "me",
+       :href "https://marc.info/?a=170527399400001&r=1&w=2"}
+      "OpenBSD Mailing Lists"]]
+    [:li
+     [:a
+      {:rel "me",
+       :href "https://deskto.ps/u/izder456"}
+      "deskto.ps"]]]]
   [:span
    [:p
     [:img {:src "/img/ARROWGRUV.GIF"}]
