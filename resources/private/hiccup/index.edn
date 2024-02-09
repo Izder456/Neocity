@@ -27,98 +27,88 @@
  [:div
   [:span
    {:id "summary-container"}
-   [:p
-    [:b "SUM INFOZ:"]
-    [:br]
-    [:b ">> I'm Currently Learning "]
-    ": Common Lisp, Clojure, & StumpWM. "
-    [:br]
-    [:b ">> Ask Me About "]
-    ": OpenBSD, Gentoo, Ricing *NIX, Music Theory, & Calculators."
-    [:br]
-    [:b ">> I Love"]
-    ": Music Theory, Being Queer, Tech "
-    [:br]
+   [:ul
+    [:li [:b "I'm Currently Learning "]]
+    "Common Lisp, Clojure, The OpenBSD Ports System & StumpWM. "
+    [:li [:b "Ask Me About "]]
+    "OpenBSD, Gentoo, Ricing *NIX, Music Theory, & Calculators."
+    [:li [:b "I Love "]]
+    "Music Theory, Being Queer, Tech "
     [:i "(duh) "]
     ", & Linguistics."
-    [:br]
-    [:b ">> Fun Fact "]
-    ": I "
-    [:br]
+    [:li [:b "Fun Fact "]]
+    "I "
     [:i "will not "]
     "help you if you don't put in the effort "
-    [:b "first "]
-    "."
-    [:br]]]
-  [:span
-   [:h4 "Portfolio"]
-   [:ul
-    [:li
-     [:a
-      {:rel "me", :href "./portfolio.html"}
-      "My Portfolio Page"]]]]
-  [:center [:img {:src "/img/SRCERIZDER.PNG"}]]
-  [:span
-   [:h4 "Music Stuffs"]
-   [:ul
-    [:li
-     [:a
-      {:rel "me", :href "https://soundcloud.com/izder456"}
-      "Soundcloud"]]
-    [:li
-     [:a
-      {:rel "me", :href "https://izder456.bandcamp.com/"}
-      "Bandcamp"]]]]
-  [:span
-   [:h4 "Social Stuffs"]
-   [:ul
-    [:li
-     [:a
-      {:rel "me",
-       :href "https://bsky.app/profile/izder456.bsky.social"}
-      "Bsky.app"]]
-    [:li
-     [:a {:rel "me", :href "https://izder456.tumblr.com"} "Tumblr"]]
-    [:li
-     [:a
-      {:rel "me", :href "https://libranet.de/profile/izder456"}
-      "Friendi.ca"]]
-    [:li
-     [:a
-      {:rel "me", :href "https://spacehey.com/profile?id=2004267"}
-      "Spacehey"]]]]
-  [:span
-   [:h4 "Tech Stuffs"]
-   [:ul
-    [:li
-     [:a {:rel "me", :href "https://github.com/izder456"} "Github"]]
-    [:li
-     [:a
-      {:rel "me",
-       :href "https://marc.info/?a=170527399400001&r=1&w=2"}
-      "OpenBSD Mailing Lists"]]
-    [:li
-     [:a
-      {:rel "me", :href "https://deskto.ps/u/izder456"}
-      "deskto.ps"]]]]
-  [:span
-   {:id "footer-container"}
-   [:p
-    [:img {:src "/img/ARROWGRUV.GIF"}]
-    [:br]
-    [:br]
-    [:b [:a {:href "#top"} "back to " [:code "$(head -n1)"] " ?"]]
-    [:br]
-    [:b [:a {:href "./index.html"} "back to " [:code "$home"] " ?"]]
-    [:br]
-    [:b [:a {:href "./index.html"} "index page!"]]
-    [:br]
-    [:i
-     [:a
-      {:href "https://www.osamusato.net/"}
-      "backdrop artwork by Osamu Sato"]]
-    [:br]
-    [:br]
-    [:img {:src "/img/ARROWGRUV.GIF"}]
-    [:br]]]]
+    [:i "first"]
+    "."]]]
+ [:span
+  [:h4 "Portfolio"]
+  [:ul
+   [:li
+    [:a {:rel "me", :href "./portfolio.html"} "My Portfolio Page"]]]]
+ [:center [:img {:src "/img/SRCERIZDER.PNG"}]]
+ [:span
+  [:h4 "Music Stuffs"]
+  [:ul
+   [:li
+    [:a
+     {:rel "me", :href "https://soundcloud.com/izder456"}
+     "Soundcloud"]]
+   [:li
+    [:a
+     {:rel "me", :href "https://izder456.bandcamp.com/"}
+     "Bandcamp"]]]]
+ [:span
+  [:h4 "Social Stuffs"]
+  [:ul
+   [:li
+    [:a
+     {:rel "me",
+      :href "https://bsky.app/profile/izder456.bsky.social"}
+     "Bsky.app"]]
+   [:li
+    [:a {:rel "me", :href "https://izder456.tumblr.com"} "Tumblr"]]
+   [:li
+    [:a
+     {:rel "me", :href "https://libranet.de/profile/izder456"}
+     "Friendi.ca"]]
+   [:li
+    [:a
+     {:rel "me", :href "https://spacehey.com/profile?id=2004267"}
+     "Spacehey"]]]]
+ [:span
+  [:h4 "Tech Stuffs"]
+  [:ul
+   [:li
+    [:a {:rel "me", :href "https://github.com/izder456"} "Github"]]
+   [:li
+    [:a
+     {:rel "me",
+      :href "https://marc.info/?a=170527399400001&r=1&w=2"}
+     "OpenBSD Mailing Lists"]]
+   [:li
+    [:a
+     {:rel "me", :href "https://deskto.ps/u/izder456"}
+     "deskto.ps"]]]]
+ [:span
+  {:id "footer-container"}
+  [:p
+   [:img {:src "/img/ARROWGRUV.GIF"}]
+   [:br]
+   [:br]
+   [:b [:a {:href "#top"} "back to " [:code "$(head -n1)"] " ?"]]
+   [:br]
+   [:b [:a {:href "./index.html"} "back to " [:code "$home"] " ?"]]
+   [:br]
+   [:b [:a {:href "./index.html"} "index page!"]]
+   [:br]
+   [:i
+    [:a
+     {:href "https://www.osamusato.net/"}
+     "backdrop artwork by Osamu Sato"]]
+   [:br]
+   [:br]
+   [:img {:src "/img/ARROWGRUV.GIF"}]
+   [:br]]]
  [:center [:h3 "GOOBYE!!!!1!!1"] [:img {:src "/img/GOOBYEGRUV.GIF"}]])
