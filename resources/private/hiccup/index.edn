@@ -47,7 +47,6 @@
     [:br]
     [:i "will not "]
     "help you if you don't put in the effort "
-    [:br]
     [:b "first "]
     "."
     [:br]]]
@@ -58,7 +57,7 @@
      [:a
       {:rel "me", :href "./portfolio.html"}
       "My Portfolio Page"]]]]
-   [:center [:img {:src "/img/SRCERIZDER.PNG"}]]
+  [:center [:img {:src "/img/SRCERIZDER.PNG"}]]
   [:span
    [:h4 "Music Stuffs"]
    [:ul
@@ -79,28 +78,20 @@
        :href "https://bsky.app/profile/izder456.bsky.social"}
       "Bsky.app"]]
     [:li
-     [:a
-      {:rel "me",
-       :href "https://izder456.tumblr.com"}
-      "Tumblr"]]
+     [:a {:rel "me", :href "https://izder456.tumblr.com"} "Tumblr"]]
     [:li
      [:a
-      {:rel "me",
-       :href "https://libranet.de/profile/izder456"}
+      {:rel "me", :href "https://libranet.de/profile/izder456"}
       "Friendi.ca"]]
     [:li
      [:a
-      {:rel "me",
-       :href "https://spacehey.com/profile?id=2004267"}
+      {:rel "me", :href "https://spacehey.com/profile?id=2004267"}
       "Spacehey"]]]]
   [:span
    [:h4 "Tech Stuffs"]
    [:ul
     [:li
-     [:a
-      {:rel "me",
-       :href "https://github.com/izder456"}
-      "Github"]]
+     [:a {:rel "me", :href "https://github.com/izder456"} "Github"]]
     [:li
      [:a
       {:rel "me",
@@ -108,18 +99,24 @@
       "OpenBSD Mailing Lists"]]
     [:li
      [:a
-      {:rel "me",
-       :href "https://deskto.ps/u/izder456"}
+      {:rel "me", :href "https://deskto.ps/u/izder456"}
       "deskto.ps"]]]]
   [:span
+   {:id "footer-container"}
    [:p
     [:img {:src "/img/ARROWGRUV.GIF"}]
+    [:br]
     [:br]
     [:b [:a {:href "#top"} "back to " [:code "$(head -n1)"] " ?"]]
     [:br]
     [:b [:a {:href "./index.html"} "back to " [:code "$home"] " ?"]]
     [:br]
     [:b [:a {:href "./index.html"} "index page!"]]
+    [:br]
+    [:i
+     [:a
+      {:href "https://www.osamusato.net/"}
+      "backdrop artwork by Osamu Sato"]]
     [:br]
     [:br]
     [:img {:src "/img/ARROWGRUV.GIF"}]
