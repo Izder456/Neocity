@@ -26,43 +26,42 @@
   [:h3 "Portfolio"]
   [:center [:img {:src "/img/STRIPED.PNG"}]]]
  [:div
-  {:id "summary-container"}
-  [:ul
-   [:li
-    "I am an OpenBSD User, Self-Taught Programmer, Lisper, & OSS advocate."]
-   [:li
-    "I go by Iz, Izzy, Izder, or Izder456 online, with my "
-    [:i "facetiously haughty"]
-    " name The Srcerizder (pun of Sorcerer + Izder, plays on alternative pronunciation of src)"]]]
- [:span
-  {:id "summary-container"}
-  [:p
-   [:h4 "Projects"]
+  [:span
+   {:id "summary-container"}
    [:ul
     [:li
-     [:a
-      {:rel "me", :href "https://github.com/izder456"}
-      "Github Profile"]
-     [:br]]
+     "I am an OpenBSD User, Self-Taught Programmer, Lisper, & OSS advocate."]
     [:li
-     [:b
-      "I home-cooked this very website from the ground up in Clojure"]
-     [:br]
-     [:a
-      {:href "https://github.com/Izder456/Neocity.git"}
-      "Neocity Project Page"]]
-    [:li
-     [:b "I contributed to the Funtoo Linux Project"]
-     [:br]
-     [:a
-      {:href
-       "https://forums.funtoo.org/blogs/entry/21-funtoo-newsletter-summer-2023/"}
-      "Funtoo Linux Project Involvement"]
-     [:br]]
-    [:li
-     [:a
-      {:href "ports.html"}
-      [:b "I maintain some ports for OpenBSD"]]]]]]
+     "I go by Iz, Izzy, Izder, or Izder456 online, with my "
+     [:i "facetiously haughty"]
+     " name The Srcerizder (pun of Sorcerer + Izder, plays on alternative pronunciation of src)"]]]]
+ [:span
+  [:h4 "Projects"]
+  [:ul
+   [:li
+    [:a
+     {:rel "me", :href "https://github.com/izder456"}
+     "Github Profile"]
+    [:br]]
+   [:li
+    [:b
+     "I home-cooked this very website from the ground up in Clojure"]
+    [:br]
+    [:a
+     {:href "https://github.com/Izder456/Neocity.git"}
+     "Neocity Project Page"]]
+   [:li
+    [:b "I contributed to the Funtoo Linux Project"]
+    [:br]
+    [:a
+     {:href
+      "https://forums.funtoo.org/blogs/entry/21-funtoo-newsletter-summer-2023/"}
+     "Funtoo Linux Project Involvement"]
+    [:br]]
+   [:li
+    [:a
+     {:href "ports.html"}
+     [:b "I maintain some ports for OpenBSD"]]]]]
  [:span
   {:id "footer-container"}
   [:p

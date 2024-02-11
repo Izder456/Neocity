@@ -23,7 +23,8 @@
  [:div
   {:class "title-container"}
   [:h1 "Srcerizder's Homepage"]
-  [:h3 "(Or Something)"]]
+  [:h3 "(Or Something)"]
+  [:center [:img {:src "/img/SRCERIZDER.PNG"}]]]
  [:div
   [:span
    {:id "summary-container"}
@@ -46,8 +47,7 @@
   [:h4 "Portfolio"]
   [:ul
    [:li
-    [:a {:rel "me", :href "./portfolio.html"} "My Portfolio Page"]]]]
- [:center [:img {:src "/img/SRCERIZDER.PNG"}]]
+    [:a {:rel "me", :href "portfolio.html"} "My Portfolio Page"]]]]
  [:span
   [:h4 "Music Stuffs"]
   [:ul
