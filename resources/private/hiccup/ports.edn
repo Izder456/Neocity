@@ -34,6 +34,7 @@
    " was done by op@ in ports@."
    [:br]
    "when 7.5 rolls around in a few months this should work on everyones architecture as long as you have 3d accel gfx."
+   [:br]
    [:i "otherwise- they are on -current if you want em now."]]]
  [:span
   [:p
