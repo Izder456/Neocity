@@ -65,14 +65,22 @@
    [:li
     [:a
      {:rel "me",
-      :href "https://bsky.app/profile/izder456.bsky.social"}
-     "Bsky.app"]]
+      :href "https://bsky.app/profile/izder456.neocities.org"}
+     "Bluesky"]]
    [:li
-    [:a {:rel "me", :href "https://izder456.tumblr.com"} "Tumblr"]]
+    [:a
+     {:rel "me", :href "https://izder456.tumblr.com"}
+     "Tumblr"]]
    [:li
     [:a
      {:rel "me", :href "https://libranet.de/profile/izder456"}
      "Friendi.ca"]]
+   [:li
+    [:a {:rel "me", :href "https://old.reddit.com/u/izder456"}
+     "Reddit"]]
+   [:li
+    [:a {:rel "me", :href "https://sh.itjust.works/u/izder456"}
+     "Lemmy"]]
    [:li
     [:a
      {:rel "me", :href "https://spacehey.com/profile?id=2004267"}
