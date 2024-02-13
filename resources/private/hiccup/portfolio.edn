@@ -22,7 +22,7 @@
   [:link {:rel "manifest", :href "/site.webmanifest"}]]
  [:div
   {:class "title-container"}
-  [:h1 "Izzy Meyer"]
+  [:h1 "Srcerizder's Homepage"]
   [:h3 "Portfolio"]
   [:center [:img {:src "/img/STRIPED.PNG"}]]]
  [:div

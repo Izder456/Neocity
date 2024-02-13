@@ -22,7 +22,7 @@
   [:link {:rel "manifest", :href "/site.webmanifest"}]]
  [:div
   {:class "title-container"}
-  [:h1 "Izzy Meyer"]
+  [:h1 "Srcerizder's Homepage"]
   [:h3 "ports@"]
   [:center [:img {:src "/img/PUFFED.PNG"}]]]
  [:div
@@ -91,7 +91,7 @@
    [:br]
    [:b [:a {:href "#top"} "back to " [:code "$(head -n1)"] " ?"]]
    [:br]
-   [:b [:a {:href "./index.html"} "back to " [:code "$home"] " ?"]]
+   [:b [:a {:href "./eggs.html"} "back to " [:code "$ovo"] " ?"]]
    [:br]
    [:b [:a {:href "./index.html"} "index page!"]]
    [:br]
