@@ -1,8 +1,8 @@
-(defproject srcerizder-site "b1.0"
+(defproject srcerizder-site "1.0"
   :description "My Neocity Page"
   :url "https://izder456.neocities.org"
-  :license {:name "WTFPL Version 2 (Modified)"
-            :url "https://www.wtfpl.net/"}
+  :license {:name "0BSD"
+            :url "https://opensource.org/license/0bsd"}
   :plugins [[dev.weavejester/lein-cljfmt "0.11.2"]]
   :dependencies [[org.clojure/clojure "1.10.3"]
                  [stasis "2023.11.21"]

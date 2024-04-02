@@ -31,10 +31,16 @@
    [:p
     "all of the PangeaSoft games from jorio have been ported now,"
     [:br]
+    "these were games originally for Mac OSX & OS 9 on 'new world' PowerPC iMacs."
+    [:br]
+    "they hold a special place in my heart."
+    [:br]
+    "as OpenBSD has a macppc architecture support, i thought it'd be funny to port these modern reimplementations to our ports tree so those on OpenBSD/macppc can relive the classics"
+    [:br]
     [:code "games/nanosaur2"]
     " was done by op@ in ports@."
     [:br]
-    "when 7.5 rolls around in a few months this should work on everyones architecture as long as you have 3d accel gfx."
+    "when 7.5 rolls around, this should work on everyones architecture as long as you have 3d accel gfx."
     [:br]
     [:i "otherwise- they are on -current if you want em now."]]]]
  [:span
