@@ -40,9 +40,7 @@
     [:code "games/nanosaur2"]
     " was done by op@ in ports@."
     [:br]
-    "when 7.5 rolls around, this should work on everyones architecture as long as you have 3d accel gfx."
-    [:br]
-    [:i "otherwise- they are on -current if you want em now."]]]]
+    "7.5 is out now, which means these should be available on all supported architectures"]]]
  [:span
   [:h4 "I highly recommend you support the original creators here:"]
   [:ul
@@ -89,6 +87,25 @@
      {:href
       "https://cvsweb.openbsd.org/cgi-bin/cvsweb/ports/games/bugdom2"}
      [:code "games/bugdom2"]]]]]
+ [:span
+  [:h4 "I also maintain a few other miscellaneous ports:"]
+  [:ul
+   [:li
+    [:a
+     {:href
+      "https://cvsweb.openbsd.org/cgi-bin/cvsweb/ports/audio/deadbeef-plugin-mpris2"}
+     [:code "audio/deadbeef-plugin-mpris2"]]]
+   [:li
+    [:a
+     {:href
+      "https://cvsweb.openbsd.org/cgi-bin/cvsweb/ports/emulators/melonds"}
+     [:code "emulators/melonds"]]]]
+  [:br]
+  [:p
+   [:a
+    {:href
+     "https://github.com/Izder456/myports.git"}
+    "The Repository"]]]
  [:span
   {:id "footer-container"}
   [:p
