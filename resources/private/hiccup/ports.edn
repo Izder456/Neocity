@@ -29,18 +29,19 @@
   [:span
    {:id "summary-container"}
    [:p
-    "all of the PangeaSoft games from jorio have been ported now,"
-    [:br]
+    "all of the PangeaSoft games from jorio have been ported now."
     "these were games originally for Mac OSX & OS 9 on 'new world' PowerPC iMacs."
-    [:br]
     "they hold a special place in my heart."
     [:br]
+    [:br]
     "as OpenBSD has a macppc architecture support, i thought it'd be funny to port these modern reimplementations to our ports tree so those on OpenBSD/macppc can relive the classics"
+    [:br]
     [:br]
     [:code "games/nanosaur2"]
     " was done by op@ in ports@."
     [:br]
-    "7.5 is out now, which means these should be available on all supported architectures"]]]
+    [:br]
+    "7.5 is out now, which means these should be available on all supported architectures, all you need is a 3d accelerated graphics card. :)"]]]
  [:span
   [:h4 "I highly recommend you support the original creators here:"]
   [:ul
@@ -88,6 +89,23 @@
       "https://cvsweb.openbsd.org/cgi-bin/cvsweb/ports/games/bugdom2"}
      [:code "games/bugdom2"]]]]]
  [:span
+  [:h4 "Some Screenies"]
+  [:span
+   [:center [:img {:src "/img/BUGDOM.PNG"}]]
+   [:br]
+   [:center [:img {:src "/img/BUGDOM2.PNG"}]]
+   [:br]
+   [:center [:img {:src "/img/NANOSAUR.PNG"}]]
+   [:br]
+   [:center [:img {:src "/img/NANOSAUR2.PNG"}]]
+   [:br]
+   [:center [:img {:src "/img/OTTOMATIC.PNG"}]]
+   [:br]
+   [:center [:img {:src "/img/BILLY.PNG"}]]
+   [:br]
+   [:center [:img {:src "/img/CROMAG.PNG"}]]
+   [:br]]]
+ [:span
   [:h4 "I also maintain a few other miscellaneous ports:"]
   [:ul
    [:li
@@ -103,8 +121,7 @@
   [:br]
   [:p
    [:a
-    {:href
-     "https://github.com/Izder456/myports.git"}
+    {:href "https://github.com/Izder456/myports.git"}
     "The Repository"]]]
  [:span
   {:id "footer-container"}
@@ -113,8 +130,6 @@
    [:br]
    [:br]
    [:b [:a {:href "#top"} "back to " [:code "$(head -n1)"] " ?"]]
-   [:br]
-   [:b [:a {:href "./eggs.html"} "back to " [:code "$ovo"] " ?"]]
    [:br]
    [:b [:a {:href "./index.html"} "index page!"]]
    [:br]
