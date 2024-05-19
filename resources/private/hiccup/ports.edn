@@ -29,9 +29,7 @@
   [:span
    {:id "summary-container"}
    [:p
-    "all of the PangeaSoft games from jorio have been ported now."
-    "these were games originally for Mac OSX & OS 9 on 'new world' PowerPC iMacs."
-    "they hold a special place in my heart."
+    "all of the PangeaSoft games from jorio have been ported now. These were games originally for Mac OS X & OS 9 on 'new world' PowerPC iMacs. They hold a special place in my heart."
     [:br]
     [:br]
     "as OpenBSD has a macppc architecture support, i thought it'd be funny to port these modern reimplementations to our ports tree so those on OpenBSD/macppc can relive the classics"
