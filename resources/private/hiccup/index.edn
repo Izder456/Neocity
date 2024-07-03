@@ -44,6 +44,35 @@
     [:i "first"]
     "."]]]
  [:span
+  {:id "summary-container"}
+  [:h4 "Helpful Writeups from Me"]
+  [:ul
+   [:li
+    [:a
+     {:href
+      "https://izder456.tumblr.com/post/750319074794520576/izs-guide-to-new-users-of-nix-systems"}
+     "Guide to new users of *NIX on the desktop"]]
+   [:li
+    [:a
+     {:href
+      "https://izder456.tumblr.com/post/754939183162933248/please-dont-say-bsd-distribution"}
+     "Please don't say BSD-Distribution"]]
+   [:li
+    [:a
+     {:href
+      "https://izder456.tumblr.com/post/753927062987931648/why-stumpwm-is-good-for-me-as-an-autistic-adult"}
+     "Why Use StumpWM?"]]
+   [:li
+    [:a
+     {:href
+      "https://izder456.tumblr.com/post/750730685912956928/i-was-asked-a-few-questions-about-this-by-an"}
+     "Why Run OpenBSD?"]]
+   [:li
+    [:a
+     {:href
+      "https://izder456.tumblr.com/post/754944196567318528/so-you-are-new-to-openbsd"}
+     "New to OpenBSD Resource List"]]]]
+ [:span
   [:h4 "Portfolio"]
   [:ul
    [:li
@@ -68,18 +97,18 @@
       :href "https://bsky.app/profile/izder456.neocities.org"}
      "Bluesky"]]
    [:li
-    [:a
-     {:rel "me", :href "https://izder456.tumblr.com"}
-     "Tumblr"]]
+    [:a {:rel "me", :href "https://izder456.tumblr.com"} "Tumblr"]]
    [:li
     [:a
      {:rel "me", :href "https://libranet.de/profile/izder456"}
      "Friendi.ca"]]
    [:li
-    [:a {:rel "me", :href "https://old.reddit.com/u/izder456"}
+    [:a
+     {:rel "me", :href "https://old.reddit.com/u/izder456"}
      "Reddit"]]
    [:li
-    [:a {:rel "me", :href "https://sh.itjust.works/u/izder456"}
+    [:a
+     {:rel "me", :href "https://sh.itjust.works/u/izder456"}
      "Lemmy"]]
    [:li
     [:a
