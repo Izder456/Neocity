@@ -2,7 +2,7 @@
   {:-webkit-text-size-adjust "100%"}
   {:-ms-text-size-adjust "100%"}
   {:background-color "#282828"}
-  {:color "#EBDBB2"}]
+  {:color "#fcf1c7"}]
  [:body
   {:background-color "#3C3836"}
   {:background-size "contain"}
@@ -43,12 +43,12 @@
   {:font-size "1.64em"}
   {:text-shadow "0px 0px 1px #D65D0E, 0px 1px 1px #928374"}]
  [:a
-  {:color "#458588"}
+  {:color "#8ec07c"}
   {:text-shadow "0px 0px 1px #D65D0E, 0px 1px 1px #F8A598"}
   {:text-generation "underline"}
   [:&:hover
-   {:color "#98971A"}
-   {:text-shadow "0px 0px 1px #698D6A, 0px 1px 1px #79740E"}]]
+   {:color "#d3869b"}
+   {:text-shadow "0px 0px 1px #fe8019, 0px 1px 1px #83a598"}]]
  [:code
   {:font-size "100%"}
   {:font-family "monospace"}
