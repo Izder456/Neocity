@@ -114,6 +114,11 @@
    [:li
     [:a
      {:href
+      "https://cvsweb.openbsd.org/cgi-bin/cvsweb/ports/games/classicube"}
+     [:code "games/classicube"]]]
+   [:li
+    [:a
+     {:href
       "https://cvsweb.openbsd.org/cgi-bin/cvsweb/ports/emulators/melonds"}
      [:code "emulators/melonds"]]]]
   [:br]
