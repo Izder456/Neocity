@@ -27,10 +27,10 @@
 
 (defn- get-pages []
   (stasis/merge-page-sources
-   {:public (stasis/slurp-directory "resources/public" #".\.(html|css|png|ico|webmanifest)$")}))
+   {:public (stasis/slurp-directory "resources/public" #".\.(html|css|png|gif|ico|webmanifest)$")}))
 
 (defn- get-assets []
-  (assets/load-assets "public" [#"/styles/." #"/img/.*\.(PNG|GIF|JPG|JPEG|BMP)"]))
+  (assets/load-assets "public" [#"/styles/." #"/img/.*\.(PNG|GIF|JPG|JPEG|BMP)" #"/blinkies/.*\.(png|gif)"]))
 
 (defn- delete-safe [file-path]
   (if (.exists (io/file file-path))

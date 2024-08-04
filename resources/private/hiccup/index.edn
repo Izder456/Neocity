@@ -24,7 +24,13 @@
   {:class "title-container"}
   [:h1 "Srcerizder's Homepage"]
   [:h3 "(Or Something)"]
-  [:center [:img {:src "/img/SRCERIZDER.PNG"}]]]
+  [:center [:img {:src "/img/SRCERIZDER.PNG"}]]
+  [:center
+   [:img {:src "/blinkies/browser-not-chrome-gruv.png"}]
+   [:img {:src "/blinkies/html-learn-gruv.png"}]
+   [:img {:src "/blinkies/neocities-make-a-gruv.gif"}]
+   [:img {:src "/blinkies/misc-unreality-gruv.png"}]]]
+ [:center [:p [:img {:src "/blinkies/smiley-gruv.gif"}]]]
  [:div
   [:span
    {:id "summary-container"}
@@ -72,6 +78,7 @@
      {:href
       "https://izder456.tumblr.com/post/754944196567318528/so-you-are-new-to-openbsd"}
      "New to OpenBSD Resource List"]]]]
+ [:center [:p [:img {:src "/blinkies/smiley-gruv.gif"}]]]
  [:span
   [:h4 "Portfolio"]
   [:ul
@@ -128,6 +135,7 @@
     [:a
      {:rel "me", :href "https://deskto.ps/u/izder456"}
      "deskto.ps"]]]]
+ [:center [:p [:img {:src "/blinkies/smiley-gruv.gif"}]]]
  [:span
   {:id "footer-container"}
   [:p

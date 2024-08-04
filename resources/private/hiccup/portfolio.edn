@@ -24,7 +24,13 @@
   {:class "title-container"}
   [:h1 "Srcerizder's Homepage"]
   [:h3 "Portfolio"]
-  [:center [:img {:src "/img/STRIPED.PNG"}]]]
+  [:center [:img {:src "/img/STRIPED.PNG"}]]
+  [:center
+   [:img {:src "/blinkies/browser-firefox-now-gruv.png"}]
+   [:img {:src "/blinkies/html-hey-gruv.gif"}]
+   [:img {:src "/blinkies/neocities-4life-gruv.png"}]
+   [:img {:src "/blinkies/misc-anti-nft-gruv.png"}]]]
+ [:center [:p [:img {:src "/blinkies/smiley-gruv.gif"}]]]
  [:div
   [:span
    {:id "summary-container"}
@@ -35,6 +41,7 @@
      "I go by Iz, Izzy, Izder, or Izder456 online, with my "
      [:i "facetiously haughty"]
      " name The Srcerizder (pun of Sorcerer + Izder, plays on alternative pronunciation of src)"]]]]
+ [:center [:p [:img {:src "/blinkies/smiley-gruv.gif"}]]]
  [:span
   [:h4 "Projects"]
   [:ul
@@ -62,6 +69,7 @@
     [:a
      {:href "ports.html"}
      [:b "I maintain some ports for OpenBSD"]]]]]
+ [:center [:p [:img {:src "/blinkies/smiley-gruv.gif"}]]]
  [:span
   {:id "footer-container"}
   [:p

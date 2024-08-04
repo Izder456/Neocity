@@ -24,7 +24,13 @@
   {:class "title-container"}
   [:h1 "Srcerizder's Homepage"]
   [:h3 "ports@"]
-  [:center [:img {:src "/img/PUFFED.PNG"}]]]
+  [:center [:img {:src "/img/PUFFED.PNG"}]]
+  [:center
+   [:img {:src "/blinkies/browser-firefox-take-back-gruv.png"}]
+   [:img {:src "/blinkies/html-got-gruv.png"}]
+   [:img {:src "/blinkies/neocities-edited-in-gruv.gif"}]
+   [:img {:src "/blinkies/misc-thorn-gruv.png"}]]]
+ [:center [:p [:img {:src "/blinkies/smiley-gruv.gif"}]]]
  [:div
   [:span
    {:id "summary-container"}
@@ -86,6 +92,7 @@
      {:href
       "https://cvsweb.openbsd.org/cgi-bin/cvsweb/ports/games/bugdom2"}
      [:code "games/bugdom2"]]]]]
+ [:center [:p [:img {:src "/blinkies/smiley-gruv.gif"}]]]
  [:span
   [:h4 "Some Screenies"]
   [:span
@@ -126,6 +133,7 @@
    [:a
     {:href "https://github.com/Izder456/myports.git"}
     "The Repository"]]]
+ [:center [:p [:img {:src "/blinkies/smiley-gruv.gif"}]]]
  [:span
   {:id "footer-container"}
   [:p
