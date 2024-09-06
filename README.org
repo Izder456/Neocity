@@ -1,42 +1,4 @@
 #+title: Srcerizder's Neocity
 #+author: izzy Meyer
 
-* Introduction
-
-My personal Neocity page built 100% in clojure.
-
-
-#+BEGIN_HTML
-<div align="left">
- <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/izder456/neocity?style=plastic">
-  <img alt="Lines of code" src="https://tokei.rs/b1/github/izder456/neocity?category=code&style=plastic">
-</div>
-#+END_HTML
-
-
-* Installation
-
-** Dependencies:
-
-+ [[Leininchen][https://leiningen.org/]]
-+ [[Clojure][https://clojure.org/]]
-
-** Grab clojars:
-
-#+BEGIN_SRC sh
-$ lein deps
-#+END_SRC
-
-** Clean, then Build site:
-
-#+BEGIN_SRC sh
-$ lein clean-site
-$ lein build-site
-#+END_SRC
-
-** Run Ring Server for testing exported static site:
-
-#+BEGIN_SRC sh
-$ lein ring server # launches xdg-open with browser to the server
-$ lein ring server-headless # just launches server, connect to it at http://127.0.0.1:3000
-#+END_SRC
+[[https://codeberg.org/izder456/Neocity][Migrated to Codeberg]]
